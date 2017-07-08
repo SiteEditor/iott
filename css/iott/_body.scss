@@ -1,0 +1,16 @@
+body {
+    background: #fff;
+    color: $color-main;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-light;
+    line-height: 1.8;
+}
+
+a {
+    color: $color-link;
+
+    &:hover {
+        color: $color-link-hover;
+    }
+}

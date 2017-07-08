@@ -1,0 +1,101 @@
+#header {
+    background: #e2e2e2 url(../images/header-bg.jpg) no-repeat top left;
+    background-size: cover;
+
+    .logo {
+        float: left;
+        position: relative;
+        margin-top: 46px;
+        height: (56 / 2) * 1px;
+        z-index: 2;
+
+        h1, h2 {
+            text-indent: -9999px;
+            margin: 0;
+        }
+
+        a {
+            background: url(../images/header-logo.png) no-repeat left top;
+            background-size: contain;
+            display: block;
+            float: left;
+            width: (180 / 2) * 1px;
+            height: (56 / 2) * 1px;
+        }
+    }
+
+    .menu {
+        font-size: 9px;
+        float: right;
+        position: relative;
+        margin-top: 46px;
+        z-index: 2;
+        // width: 64px;
+        // height: 64px;
+
+        button {
+            background: transparent;
+            border: none;
+            padding-right: 0;
+        }
+
+        .glyphicon {
+            font-size: 32px;
+
+            span {
+                font-size: 9px;
+                display: block;
+            }
+        }
+
+        .glyphicon-menu-hamburger {
+            display: block;
+        }
+
+        .glyphicon-remove {
+            display: none;
+        }
+
+        @at-root .isNavigationOpen & {
+            button { color: #fff; }
+            .glyphicon-menu-hamburger { display: none; }
+            .glyphicon-remove         { display: block; }
+        }
+    }
+
+    .socials {
+        float: right;
+        padding: 32px 0 16px 18px;
+        text-align: center;
+
+        a {
+            border-radius: 50%;
+            color: #585858;
+            display: block;
+            line-height: 26px;
+            margin-bottom: 6px;
+            width: 26px;
+            height: 26px;
+            text-indent: -9999px;
+            opacity: 1;
+
+            &.instagram { background: url(../images/3.png) no-repeat 0 0; background-size: contain; }
+            &.linkdin   { background: url(../images/4.png) no-repeat 0 0; background-size: contain; }
+            &.google    { background: url(../images/5.png) no-repeat 0 0; background-size: contain; }
+            &.facebook  { background: url(../images/6.png) no-repeat 0 0; background-size: contain; }
+            &:hover     { opacity: .8; }
+        }
+    }
+
+    .banner {
+        padding-top: 46px;
+
+        h3 {
+            color: $color-secondary;
+        }
+
+        h5 {
+            color: #777;
+        }
+    }
+}

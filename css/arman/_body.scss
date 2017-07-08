@@ -1,0 +1,31 @@
+body {
+    font-size: 1em;
+    line-height: 1.618;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        text-decoration: none !important;
+    }
+}
+
+p {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.ltr { direction: ltr; }
+
+.list-style-none {
+    list-style: none;
+}

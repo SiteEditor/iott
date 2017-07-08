@@ -1,0 +1,413 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kimia dam Project\n"
+"POT-Creation-Date: 2017-06-19 19:53+0430\n"
+"PO-Revision-Date: 2017-06-19 19:58+0430\n"
+"Last-Translator: \n"
+"Language-Team: Site Editor Team <info@siteeditor.org>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: archive-kimia_gallery.php:101 archive.php:77 index.php:67
+msgid "Previous page"
+msgstr "صفحه قبلی"
+
+#: archive-kimia_gallery.php:102 archive.php:78 index.php:68
+msgid "Next page"
+msgstr "صفحه بعدی"
+
+#: archive-kimia_gallery.php:103 archive.php:79 index.php:69
+msgid "Page"
+msgstr "برگه"
+
+#: functions.php:140
+msgid "Product Catalog Download"
+msgstr "دانلود کاتالوگ محصولات"
+
+#: functions.php:159
+msgid "Download"
+msgstr "دانلود"
+
+#: index.php:38
+msgid "Blog"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:22
+#: site-editor/modules/posts/posts.php:296
+msgid "Posts"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:23
+#: site-editor/modules/posts/posts.php:297
+msgid "List of posts for built-in and custom post types"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:98
+msgid "Posts Settings"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:112
+msgid "Image Size Field"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:113
+msgid "This option allows you to set a title for your image."
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:118
+msgid "Show Title"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:129
+msgid "Title"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:130
+msgid "Module Title"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:131
+msgid "Enter Module Title"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:156
+msgid "Select Post Type"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:157
+msgid "Select Type of Posts"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:164
+msgid "Offset"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:165
+msgid "Start Posts Of this offset"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:174
+#: site-editor/modules/posts/posts.php:175
+msgid "Number Of Posts"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:184
+#: site-editor/modules/posts/posts.php:185
+msgid "Excerpt Length"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:200
+#: site-editor/modules/posts/posts.php:210
+#: site-editor/modules/posts/posts.php:211
+msgid "Select Taxonomy"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:239
+msgid "Select Terms"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:240
+msgid "Select Terms for current selected Taxonomy"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:260
+msgid "Change skin"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:270
+msgid "Animation Settings"
+msgstr ""
+
+#: site-editor/modules/posts/posts.php:280
+msgid "Module Wrapper Settings"
+msgstr ""
+
+#: site-editor/modules/posts/skins/default/sed_posts.php:38
+msgid "Not found result"
+msgstr ""
+
+#: template-parts/post/blog-content.php:44
+msgid "Read More"
+msgstr "بیشتر بخوانید"
+
+#: template-parts/post/blog-content.php:60
+msgid "Pages:"
+msgstr ""
+
+#~ msgid "Your Last Login %s"
+#~ msgstr "آخرین ورود شما  %s"
+
+#~ msgid "Share on Facebook"
+#~ msgstr "اشتراک گذاری در فیسبوک"
+
+#~ msgid "Share on Twitter"
+#~ msgstr "اشتراک گذاری در تویتر"
+
+#~ msgid "Post Share"
+#~ msgstr "اشتراک گذاری"
+
+#~ msgid "Share on Linkedin"
+#~ msgstr "اشتراک گذاری در لینکدین"
+
+#~ msgid "Share on Pinterest"
+#~ msgstr "اشتراک گذاری در پینترست"
+
+#~ msgid "Share on Google+"
+#~ msgstr "اشتراک در گوگل پلاس"
+
+#~ msgid "In Stock"
+#~ msgstr "موجود"
+
+#~ msgid "Out of Stock"
+#~ msgstr "ناموجود"
+
+#~ msgid "Review Specialists's 70 color"
+#~ msgstr "نقد و بررسی متخصصین هفتاد رنگ"
+
+#~ msgid "Review Specialized"
+#~ msgstr "نقد و بررسی تخصصی"
+
+#~ msgid "Product Attributes"
+#~ msgstr "ویژگی های محصول"
+
+#~ msgid "You must accept term of services if you want to join us."
+#~ msgstr ""
+#~ "شما در صورتی که تمایل دارید به ما ملحق شوید باید شرایط و قوانین استفاده "
+#~ "از سرویس ها را بپذیرید."
+
+#~ msgid "My Profile"
+#~ msgstr "حساب کاربری من"
+
+#~ msgid "Change Password"
+#~ msgstr "تغییر رمز عبور"
+
+#~ msgid "Logout"
+#~ msgstr "خروج از سیستم"
+
+#~ msgid "View all my orders"
+#~ msgstr "مشاهده ی تمام سفارش ها"
+
+#~ msgid "Comming Soon!"
+#~ msgstr "به زودی !"
+
+#~ msgid "View my wishlist"
+#~ msgstr " لیست مورد علاقه های من"
+
+#~ msgid "Removed"
+#~ msgstr "حذف شده"
+
+#~ msgid "Error"
+#~ msgstr "خطا"
+
+#~ msgid "Data is invalid"
+#~ msgstr "داده ها نامعتبر است"
+
+#~ msgid "Product ID is not valid."
+#~ msgstr "شناسه ی محصول نامعتبر است."
+
+#~ msgid "You should at least choose one type of notifications."
+#~ msgstr "شما باید حداقل یک نوع اعلان را انتخاب نمایید."
+
+#~ msgid "form not change"
+#~ msgstr "داده های ارسالی تکراری می باشد."
+
+#~ msgid "An error occurred"
+#~ msgstr "یک خطا رخ داده است."
+
+#~ msgid "Success Saved"
+#~ msgstr "داده ها با موفقیت ذخیره شدند."
+
+#~ msgid "Related Products"
+#~ msgstr "محصولات مرتبط"
+
+#~ msgid "Featured Products"
+#~ msgstr "محصولات ویژه"
+
+#~ msgid "Yes"
+#~ msgstr "بله"
+
+#~ msgid "NO"
+#~ msgstr "خیر"
+
+#~ msgid "User Info"
+#~ msgstr "اطلاعات کاربر"
+
+#~ msgid "First & Last Name:"
+#~ msgstr "نام و نام خانوادگی:"
+
+#~ msgid "Phone:"
+#~ msgstr "شماره تلفن ثابت:"
+
+#~ msgid "Gender:"
+#~ msgstr "جنسیت:"
+
+#~ msgid "Email:"
+#~ msgstr "آدرس الکترونیکی:"
+
+#~ msgid "Mobile:"
+#~ msgstr "شماره تلفن همراه:"
+
+#~ msgid "Address:"
+#~ msgstr "محل سکونت:"
+
+#~ msgid "ID cart:"
+#~ msgstr "کد ملی:"
+
+#~ msgid "Birthday:"
+#~ msgstr "تاریخ تولد:"
+
+#~ msgid "Take Newsletter:"
+#~ msgstr "دریافت خبرنامه:"
+
+#~ msgid "Edit Account Info"
+#~ msgstr "ویرایش اطلاعات"
+
+#~ msgid "User functionality report"
+#~ msgstr "گزارش عملکرد"
+
+#~ msgid "All Orders Count:"
+#~ msgstr "تعداد کل سفارشات:"
+
+#~ msgid "Pending Orders:"
+#~ msgstr "سفارشات در انتظار پرداخت:"
+
+#~ msgid "Processing Orders:"
+#~ msgstr "سفارشات در حال پردازش:"
+
+#~ msgid "On hold Orders:"
+#~ msgstr "سفارشات در انتظار تاييد:"
+
+#~ msgid "Completed Orders:"
+#~ msgstr "سفارشات تکمیل شده:"
+
+#~ msgid "Cancelled Orders:"
+#~ msgstr "سفارشات لغو شده:"
+
+#~ msgid "Refunded Orders:"
+#~ msgstr "سفارشات برگشت خورده:"
+
+#~ msgid "Failed Orders:"
+#~ msgstr "سفارشات ناموفق:"
+
+#~ msgid "Number comments:"
+#~ msgstr "تعداد نظرات:"
+
+#~ msgid "join us"
+#~ msgstr "به ما بپیوندید."
+
+#~ msgid "Username"
+#~ msgstr "نام کاربری"
+
+#~ msgid "Email address"
+#~ msgstr "آدرس ایمیل"
+
+#~ msgid "Anti-spam"
+#~ msgstr "آنتی-اسپم"
+
+#~ msgid "I would like to receive newsletter"
+#~ msgstr "من تمایل دارم خبرنامه ی هفتاد رنگ را دریافت نمایم."
+
+#~ msgid "Product thumbnail"
+#~ msgstr "تصویر محصول"
+
+#~ msgid "Product title"
+#~ msgstr "عنوان محصول"
+
+#~ msgid "notification types"
+#~ msgstr "اعلانات"
+
+#~ msgid "Budget notification"
+#~ msgstr "بودجه مد نظر شما"
+
+#~ msgid "Onsale notification"
+#~ msgstr "پیشنهاد شگفت انگیز"
+
+#~ msgid "No products added in the notifications table."
+#~ msgstr "هیچ محصولی در لیست اعلانات موجود نیست."
+
+#~ msgid "View all notifications"
+#~ msgstr "نمایش همه اعلان ها"
+
+#~ msgid "Notifications"
+#~ msgstr "اطلاع رسانی"
+
+#~ msgid "Remove"
+#~ msgstr "حذف کردن"
+
+#~ msgid "Price:"
+#~ msgstr "قیمت :"
+
+#~ msgid "Buy External"
+#~ msgstr "خرید از سایت های دیگر:"
+
+#~ msgid "Plot Prices Table"
+#~ msgstr "جدول نرخ تغییرات قیمت"
+
+#~ msgid "Buy Success Product"
+#~ msgstr "خرید موفق این محصول:"
+
+#~ msgid "Awaiting product image"
+#~ msgstr "در انتظار تصویر محصول"
+
+#~ msgid "Product short description"
+#~ msgstr "معرفی اجمالی محصول"
+
+#~ msgid "Stock Status:"
+#~ msgstr "وضعیت در انبار:"
+
+#~ msgid "Read more"
+#~ msgstr "اطلاعات بیشتر"
+
+#~ msgid "Your price budget"
+#~ msgstr "بودجه ی مد نظر شما:"
+
+#~ msgid "Notify me when this product is equal with my budget"
+#~ msgstr ""
+#~ "زمانی که قیمت این محصول با بودجه ی مد نظر من یکی شد به من اطلاع بده."
+
+#~ msgid "Notify me when this product is onsale"
+#~ msgstr "زمانی که این محصول جزو پیشنهادات شگفت انگیز بود به من اطلاع بده."
+
+#~ msgid "Save"
+#~ msgstr "ذخیره"
+
+#~ msgid "General Attributes"
+#~ msgstr "مشخصات کلی"
+
+#~ msgid "Edit Account Info:"
+#~ msgstr "ویرایش حساب کاربری"
+
+#~ msgid "Change Password:"
+#~ msgstr "تغییر رمز عبور"
+
+#~ msgid "Payment Terms"
+#~ msgstr "پرداخت در محل"
+
+#~ msgid "Delivery"
+#~ msgstr "مهلت تست محصول"
+
+#~ msgid "Origin Guarantee"
+#~ msgstr "تضمین اصالت و کیفیت کالا"
+
+#~ msgid "Return Policy"
+#~ msgstr "روش های ارسال کالا"
+
+#~ msgid "skin is not set."
+#~ msgstr "f"
+
+#~ msgid "Package is not set."
+#~ msgstr "f"
+
+#~ msgid "edit with site editor"
+#~ msgstr "f"
