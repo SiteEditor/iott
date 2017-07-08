@@ -57,9 +57,10 @@ function sed_iott_add_modules( $modules ){
     $module_name = "themes/sed-iott/site-editor/modules/posts/posts.php";
     $modules[$module_name] = $sed_pb_modules->get_module_data(get_stylesheet_directory() . '/site-editor/modules/posts/posts.php', true, true);
 
-    $module_name = "themes/sed-iott/site-editor/modules/iott-rproducts/iott-rproducts.php";
-    $modules[$module_name] = $sed_pb_modules->get_module_data(get_stylesheet_directory() . '/site-editor/modules/iott-rproducts/iott-rproducts.php', true, true);
-
+    /*$module_name = "themes/sed-iott/site-editor/modules/iott-events/iott-events.php";
+    $modules[$module_name] = $sed_pb_modules->get_module_data(get_stylesheet_directory() . '/site-editor/modules/iott-events/iott-events.php', true, true);
+    */
+    
     return $modules;
 
 }
