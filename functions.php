@@ -13,7 +13,7 @@ function iott_enqueue_styles() {
         array('parent-style')
     );
 
-    wp_enqueue_style( 'iott-main-style', get_stylesheet_directory_uri() . '/css/style.css' );
+    //wp_enqueue_style( 'iott-main-style', get_stylesheet_directory_uri() . '/css/style.css' );
 
     wp_enqueue_script( "typed-js" , get_stylesheet_directory_uri() . '/assets/js/typed.js/dist/typed.min.js' , array( 'jquery' ) , "1.0.0" , true );
 

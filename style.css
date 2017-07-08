@@ -12,3 +12,426 @@ Tags:          agency, business, clean, corporate, creative, dms, modern, multi-
 Text Domain:   iott
 */
 
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "B Yekan";
+  font-size: 15px;
+}
+
+h5 ,
+.main-navigation ul ul a ,
+.site-title ,
+.page .panel-content .recent-posts .entry-title ,
+.page .panel-content .entry-title,
+.page-title,
+body.page:not(.twentyseventeen-front-page) .entry-title ,
+.entry-meta ,
+.entry-footer .cat-links,
+.entry-footer .tags-links ,
+.nav-subtitle ,
+.comment-metadata , 
+h2.widget-title ,
+.widget_rss .rss-date,
+.widget_rss li cite ,
+.site-content .wp-playlist-current-item .wp-playlist-item-artist,
+.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title,
+.sed-app-editor.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
+	letter-spacing: 0;
+}
+
+
+
+/***************** Header *****************/
+
+#header {
+    background: url(images/header-bg.jpg) top left no-repeat #e2e2e2;
+    background-size: cover
+}
+#header .logo {
+    float: left;
+    margin-top: 46px;
+    height: 28px;
+    z-index: 2
+}
+#header .logo h1,
+#header .logo h2 {
+    text-indent: -9999px;
+    margin: 0
+}
+#header .logo a {
+    background: url(images/header-logo.png) left top no-repeat;
+    background-size: contain;
+    display: block;
+    float: left;
+    width: 90px;
+    height: 28px
+}
+#header .menu {
+    font-size: 9px;
+    float: right;
+    margin-top: 46px;
+    z-index: 2
+}
+#header .menu button {
+    background: 0 0;
+    border: none;
+    padding-right: 0
+}
+#header .menu .glyphicon {
+    font-size: 32px
+}
+#header .menu .glyphicon span {
+    font-size: 9px;
+    display: block
+}
+#header .menu .glyphicon-menu-hamburger {
+    display: block
+}
+#header .menu .glyphicon-remove,
+.isNavigationOpen #header .menu .glyphicon-menu-hamburger {
+    display: none
+}
+.isNavigationOpen #header .menu button {
+    color: #fff
+}
+.isNavigationOpen #header .menu .glyphicon-remove {
+    display: block
+}
+#header .socials {
+    float: right;
+    padding: 32px 0 16px 18px;
+    text-align: center
+}
+#header .socials a {
+    border-radius: 50%;
+    color: #585858;
+    display: block;
+    line-height: 26px;
+    margin-bottom: 6px;
+    width: 26px;
+    height: 26px;
+    text-indent: -9999px;
+    opacity: 1
+}
+#header .socials a.instagram {
+    background: url(images/3.png) no-repeat;
+    background-size: contain
+}
+#header .socials a.linkdin {
+    background: url(images/4.png) no-repeat;
+    background-size: contain
+}
+#header .socials a.google {
+    background: url(images/5.png) no-repeat;
+    background-size: contain
+}
+#header .socials a.facebook {
+    background: url(images/6.png) no-repeat;
+    background-size: contain
+}
+#header .socials a:hover {
+    opacity: .8
+}
+#header .banner {
+    padding-top: 46px
+}
+#header .banner h3 {
+    color: #08a
+}
+#header .banner h5 {
+    color: #777
+}
+
+#header ul {
+    list-style-type: none;
+}
+
+/***************** Menu *****************/
+
+.menu-container {
+    background: rgba(233, 232, 230, .9);
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2
+}
+.menu-container .right-panel {
+    background: #6e6e70;
+    box-shadow: 250px 0 0 0 #6e6e70;
+    padding-top: 150px;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0
+}
+.menu-container .right-panel a {
+    color: #fff
+}
+.menu-container .right-panel ul.list-menu li {
+    clear: both;
+    padding: 5px 5px 5px 10%;
+    position: relative;
+    margin-right: -5px
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu {
+    background: 0 0;
+    list-style: none;
+    padding: 0 20px 0 0;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin: 0;
+    width: 200px;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all .2s ease-out
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu::before {
+    content: '';
+    border: 10px solid transparent;
+    border-right: none;
+    border-left-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 100%;
+    margin-left: -20px;
+    width: 0;
+    height: 0
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item {
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    color: #333;
+    float: none;
+    margin: 0;
+    width: 100%;
+    overflow: hidden
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item:not(:last-child) {
+    border-bottom: 1px solid #eee
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item:first-child {
+    border-radius: 4px 4px 0 0
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item:last-child {
+    box-shadow: 0 4px 5px -2px rgba(0, 0, 0, .3);
+    border-radius: 0 0 4px 4px
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item a {
+    color: inherit;
+    padding: 5px 10px
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item:hover {
+    background: #eee
+}
+.menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item:hover a {
+    color: #fff
+}
+.menu-container .right-panel ul.list-menu li:not(:last-child) {
+    margin-bottom: 10px
+}
+.menu-container .right-panel ul.list-menu li:not(.search-form-container) {
+    border: 2px solid transparent;
+    border-radius: 2px;
+    float: right;
+    width: auto
+}
+.menu-container .right-panel ul.list-menu li:not(.search-form-container)::before {
+    background: #08a;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    z-index: 0;
+    transition: left .15s ease-out
+}
+.menu-container .right-panel ul.list-menu li:not(.search-form-container):hover::before {
+    left: 0
+}
+.menu-container .right-panel ul.list-menu li:hover {
+    border-color: #fff
+}
+.menu-container .right-panel ul.list-menu li:hover ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0)
+}
+.menu-container .right-panel ul.list-menu li a {
+    display: block;
+    position: relative
+}
+.menu-container .right-panel .socials li {
+    background: rgba(0, 0, 0, .1);
+    float: right;
+    width: 25%;
+    height: 50px
+}
+.menu-container .right-panel .socials a {
+    color: #585858;
+    display: block;
+    float: right;
+    line-height: 26px;
+    margin-bottom: 6px;
+    width: 100%;
+    height: 50px;
+    opacity: 1
+}
+.menu-container .right-panel .socials a.instagram {
+    background: url(images/24.png) center center no-repeat #c2c2c4;
+    background-size: contain
+}
+.menu-container .right-panel .socials a.instagram:hover {
+    background-image: url(images/25.png)
+}
+.menu-container .right-panel .socials a.linkdin {
+    background: url(images/26.png) center center no-repeat #c2c2c4;
+    background-size: contain
+}
+.menu-container .right-panel .socials a.linkdin:hover {
+    background-image: url(images/27.png)
+}
+.menu-container .right-panel .socials a.google {
+    background: url(images/28.png) center center no-repeat #c2c2c4;
+    background-size: contain
+}
+.menu-container .right-panel .socials a.google:hover {
+    background-image: url(images/29.png)
+}
+.menu-container .right-panel .socials a.facebook {
+    background: url(images/22.png) center center no-repeat #c2c2c4;
+    background-size: contain
+}
+.menu-container .right-panel .socials a.facebook:hover {
+    background-image: url(images/23.png)
+}
+.menu-container .right-panel .socials a:hover {
+    opacity: .8
+}
+.menu-container .right-panel .bottom-panel {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+.menu-container .right-panel .bottom-panel .closeMenu {
+    background: url(images/iott-menu.jpg) center center no-repeat;
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 25%;
+    height: 70px
+}
+.menu-container .right-panel .bottom-panel .closeMenu:hover {
+    opacity: .7
+}
+.menu-container .left-panel {
+    display: none;
+    margin-right: 250px
+}
+@media (min-width: 768px) {
+    .menu-container .left-panel {
+        display: block
+    }
+}
+.menu-container .left-panel .item {
+    padding-right: 7px;
+    position: relative;
+    margin-bottom: 10px
+}
+.menu-container .left-panel .item .thumbnail-wrap {
+    display: block;
+    position: relative
+}
+.menu-container .left-panel .item .thumbnail-wrap h6 {
+    background: #fff;
+    border: 2px solid #08a;
+    border-radius: 2px;
+    color: #313131;
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    width: 135px;
+    padding: 12px 20px;
+    transform: translateX(40px);
+    transition: all .2s linear;
+    opacity: 0;
+    z-index: 1
+}
+@media (max-width: 1200px) {
+    .menu-container .left-panel .item .thumbnail-wrap h6 {
+        right: 50px
+    }
+}
+.menu-container .left-panel .item .thumbnail-wrap h6::before {
+    background: #08a;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    transition: left .15s ease-out
+}
+.menu-container .left-panel .item .thumbnail-wrap h6 span {
+    position: relative;
+    display: block
+}
+.menu-container .left-panel .item .thumbnail-wrap:hover h6::before {
+    left: 0
+}
+.menu-container .left-panel .item .thumbnail-wrap:hover h6 span {
+    color: #fff
+}
+.menu-container .left-panel .item:hover .thumbnail-wrap h6 {
+    transform: translateX(0);
+    opacity: 1
+}
+.menu-container .left-panel .item img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+@media (min-width: 992px) {
+    .menu-container .left-panel .item .entry {
+        padding-right: 30px
+    }
+}
+.menu-container .left-panel .item h5 {
+    color: #08a;
+    font-family: Times;
+    font-size: 20px
+}
+.menu-container .left-panel .item hr.little-separator {
+    border-top: 2px solid #08a;
+    width: 30px;
+    height: 2px;
+    margin: 5px 0 0
+}
+.menu-container .left-panel .item p {
+    font-size: 12px;
+    display: none
+}
+@media (min-width: 768px) {
+    .menu-container .left-panel .item p {
+        display: block
+    }
+}
+
+.menu-container ul {
+    list-style-type: none;
+}
+
+
+

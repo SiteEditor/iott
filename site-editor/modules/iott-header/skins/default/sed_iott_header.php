@@ -1,7 +1,7 @@
 <div <?php echo $sed_attrs; ?> class="module module-posts module-posts-default <?php echo $class; ?> ">
 
     <section class="menu-container">
-        <div class="container">
+        <div class="sed-row-boxed">
             <div class="right-panel pull-right">
                 <ul class="list-menu list-unstyled">
                     <?php wp_nav_menu(array('theme_location' => 'top', 'container' => '', 'items_wrap' => '%3$s')); ?>
@@ -18,10 +18,10 @@
                     <a href="#close" class="closeMenu toggle-navigation"></a>
                     <div class="socials">
                         <ul class="list-unstyled">
-                            <?php /* if(get_field('social_instagram', 'option')) { ?><li><a href="<?php the_field('social_instagram', 'option'); ?>" title="Instagram" class="instagram"></a></li><?php } ?>
-	                        <?php if(get_field('social_linkdin', 'option')) { ?><li><a href="<?php the_field('social_linkdin', 'option'); ?>" title="Linkdin" class="linkdin"></a></li><?php } ?>
-	                        <?php if(get_field('social_googleplus', 'option')) { ?><li><a href="<?php the_field('social_googleplus', 'option'); ?>" title="Google Plus" class="google"></a></li><?php } ?>
-	                        <?php if(get_field('social_facebook', 'option')) { ?><li><a href="<?php the_field('social_facebook', 'option'); ?>" title="Facebook" class="facebook"></a></li><?php }*/ ?>
+                            <?php  //if(get_field('social_instagram', 'option')) { ?><li><a href="<?php //the_field('social_instagram', 'option'); ?>" title="Instagram" class="instagram"></a></li><?php //} ?>
+	                        <?php //if(get_field('social_linkdin', 'option')) { ?><li><a href="<?php //the_field('social_linkdin', 'option'); ?>" title="Linkdin" class="linkdin"></a></li><?php //} ?>
+	                        <?php //if(get_field('social_googleplus', 'option')) { ?><li><a href="<?php //the_field('social_googleplus', 'option'); ?>" title="Google Plus" class="google"></a></li><?php //} ?>
+	                        <?php //if(get_field('social_facebook', 'option')) { ?><li><a href="<?php //the_field('social_facebook', 'option'); ?>" title="Facebook" class="facebook"></a></li><?php //} ?>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
     </section>
 
     <header id="header">
-        <div class="container">
+        <div class="sed-row-boxed">
             <div class="logo">
                 <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>"><?php bloginfo('title'); ?></a></h1>
                 <h2><?php bloginfo('description'); ?></h2>
@@ -73,10 +73,10 @@
 
             <div class="socials">
                 <ul class="list-unstyled">
-                    <?php /*if(get_field('social_instagram', 'option')) { ?><li><a href="<?php the_field('social_instagram', 'option'); ?>" title="Instagram" class="instagram"></a></li><?php } ?>
-                    <?php if(get_field('social_linkdin', 'option')) { ?><li><a href="<?php the_field('social_linkdin', 'option'); ?>" title="Linkdin" class="linkdin"></a></li><?php } ?>
-                    <?php if(get_field('social_googleplus', 'option')) { ?><li><a href="<?php the_field('social_googleplus', 'option'); ?>" title="Google Plus" class="google"></a></li><?php } ?>
-                    <?php if(get_field('social_facebook', 'option')) { ?><li><a href="<?php the_field('social_facebook', 'option'); ?>" title="Facebook" class="facebook"></a></li><?php } */?>
+                    <?php //if(get_field('social_instagram', 'option')) { ?><li><a href="<?php //the_field('social_instagram', 'option'); ?>" title="Instagram" class="instagram"></a></li><?php //} ?>
+                    <?php //if(get_field('social_linkdin', 'option')) { ?><li><a href="<?php //the_field('social_linkdin', 'option'); ?>" title="Linkdin" class="linkdin"></a></li><?php //} ?>
+                    <?php //if(get_field('social_googleplus', 'option')) { ?><li><a href="<?php //the_field('social_googleplus', 'option'); ?>" title="Google Plus" class="google"></a></li><?php //} ?>
+                    <?php //if(get_field('social_facebook', 'option')) { ?><li><a href="<?php //the_field('social_facebook', 'option'); ?>" title="Facebook" class="facebook"></a></li><?php //} ?>
                 </ul>
             </div>
 
