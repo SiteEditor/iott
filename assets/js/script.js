@@ -142,5 +142,24 @@
         })
     });
 
+    var scrollbarContainer =  $(".sed_iott_header_vertical_menu_wrap"),
+        scrollbarHeight =  $( window ).height() - 340;  
+
+    scrollbarContainer.css({
+        height : scrollbarHeight + 'px', 
+    });
+    
+
+    scrollbarContainer.mCustomScrollbar({
+        autoHideScrollbar:true ,
+        advanced:{
+            updateOnBrowserResize:true, /*update scrollbars on browser resize (for layouts based on percentages): boolean*/
+            updateOnContentResize:true,
+        },
+        scrollButtons:{
+            enable:true
+        },
+    });
+
 
 })(jQuery);
