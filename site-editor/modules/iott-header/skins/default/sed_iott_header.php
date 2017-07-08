@@ -64,8 +64,8 @@
 
             <div class="menu">
                 <button class="toggle-navigation">
-                    <i class="glyphicon glyphicon-menu-hamburger"><span>MENU</span></i>
-                    <i class="glyphicon glyphicon-remove"><span>CLOSE</span></i>
+                    <span class="toggle-menu-hamburger-open"></span>
+                    <span class="toggle-menu-hamburger-close"></span>
                 </button>
             </div>
 

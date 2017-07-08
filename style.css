@@ -80,26 +80,38 @@ h2.widget-title ,
     border: none;
     padding-right: 0
 }
-#header .menu .glyphicon {
-    font-size: 32px
+#header .menu .toggle-navigation span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-#header .menu .glyphicon span {
-    font-size: 9px;
-    display: block
+
+#header .menu .toggle-menu-hamburger-open {
+    background: url(images/1.png) left top no-repeat;
+    background-size: contain;
+    display: block;
 }
-#header .menu .glyphicon-menu-hamburger {
-    display: block
-}
-#header .menu .glyphicon-remove,
-.isNavigationOpen #header .menu .glyphicon-menu-hamburger {
+
+#header .menu .toggle-menu-hamburger-close,
+.isNavigationOpen #header .menu .toggle-menu-hamburger-open {
     display: none
 }
-.isNavigationOpen #header .menu button {
-    color: #fff
+
+.isNavigationOpen #header .menu .toggle-menu-hamburger-close {
+    display: block;
+    background: url(images/2.png) left top no-repeat;
+    background-size: contain;
 }
-.isNavigationOpen #header .menu .glyphicon-remove {
-    display: block
-}
+
 #header .socials {
     float: right;
     padding: 32px 0 16px 18px;
