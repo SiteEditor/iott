@@ -13,7 +13,9 @@
 
         ?>
 
-        <div class="sed-raw-about-images">
+    <section class="features">
+            <div class="slider-wrap">
+                <div class="carousel" >
 
             <?php
             // Start the Loop.
@@ -25,8 +27,9 @@
             }
 
             ?>
-
-        </div>
+                </div>
+            </div>
+    </section>
 
         <?php
 

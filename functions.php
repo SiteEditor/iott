@@ -27,6 +27,8 @@ function iott_enqueue_styles() {
 
     wp_enqueue_style('custom-scrollbar');
 
+    wp_enqueue_style("carousel");
+
 }
 
 add_action( 'wp_enqueue_scripts', 'iott_enqueue_styles' , 0 );

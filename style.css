@@ -533,9 +533,193 @@ h2.widget-title ,
     box-sizing: border-box;
 }
 
-.mCS-light.mCSB_scrollTools, .mCS-light-dark.mCSB_scrollTools {
+.mCS-light.mCSB_scrollTools, 
+.mCS-light-dark.mCSB_scrollTools {
     display: none !important;
 }
+
+.slick-slider .slide-next,
+.slick-slider .slide-prev,
+.slick-slider .slide-nav-bt { 
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    min-width: 0;
+    line-height: 1.4em;
+    margin-top: -0.75em;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.slick-slider .slide-next {
+    right: 0;
+}
+
+.slick-slider .slide-prev {
+    left: 0;
+}
+
+.slick-slider {
+	margin: 0 45px;
+}
+
+.slick-list {
+    /*padding: 0 3px;*/
+}
+
+.slick-dots {
+    bottom: -15px;
+    text-align: left;
+    font-size: 0;
+}
+
+.slick-dots li button:before {
+    content: "";
+    background: #333;
+    border-radius: 100px;
+    opacity: .25;
+    height: 3px;
+}
+
+.slick-dots li,.slick-dots li button {
+    height: 3px;
+    padding: 0;
+}
+
+.slick-dots li button:focus:before, 
+.slick-dots li button:hover:before,
+.slick-dots li.slick-active button:before {
+    background: #08a;
+    opacity: 1;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li.slick-active {
+    width: 28px;
+}
+ 
+.slick-dots li {
+    margin: 0 2px;
+}
+
+/******************* features *****************/
+
+.features {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    margin: 0 0 30px
+}
+.features .item {
+    margin: 0;
+    border-left: 1px solid #e0e0e0
+}
+.features .item:first-child {
+    border-right: 1px solid #e0e0e0
+}
+.features .item a {
+    display: block;
+    text-align: center;
+}
+.features .item a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0.7em;
+}
+.features .item:nth-child(even) a {
+    background-color: #f3f3f3;
+}
+.features .item .caption {
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid #08a;
+    line-height: 1.5;
+    padding: .7em;
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
+    bottom: 0.7em;
+    left: 0.7em;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .15s linear;    
+    text-align: initial;
+}
+.features .item .caption h5 hr.little-separator {
+    border-top: 2px solid #08a;
+    width: 30px;
+    height: 2px;
+    margin: 12px 0 6px
+}
+.features .item .caption h5 span {
+    font-family: Yekan, Tahoma, sans-serif;
+    font-size: 10px
+}
+.features .item .caption p {
+    color: #575757;
+    font-size: 11px;
+    line-height: inherit
+}
+.newsbar,
+.newsbar a {
+    color: #47464b
+}
+.features .item:hover .caption {
+    opacity: 1
+}
+.features .flickity-rtl .flickity-prev-next-button {
+    width: 28px;
+    height: 28px
+}
+
+.features .slick-slider .slide-next,
+.features .slick-slider .slide-prev,
+.features .slick-slider .slide-nav-bt {
+    width: 20px;
+    height: 20px;
+    margin: 0 -30px;
+    margin-top: -10px;
+    color: transparent;
+}
+
+.features .slick-slider .slide-next {
+    background: url(images/7.png) no-repeat;
+    background-size: contain;
+}
+
+.features .slick-slider .slide-prev {
+    background: url(images/8.png) no-repeat;
+    background-size: contain;
+}
+
+.rtl .features .slick-slider .slide-next {
+    background-img: url(images/8.png);
+}
+
+.rtl .features .slick-slider .slide-prev {
+    background-img: url(images/7.png); 
+}
+
+@media (min-width: 992px) {
+    .features .flickity-rtl .flickity-prev-next-button.next {
+        left: -20px
+    }
+    .features .flickity-rtl .flickity-prev-next-button.previous {
+        right: -20px
+    }
+}
+.features .flickity-rtl .flickity-prev-next-button:disabled {
+    display: none
+}
+
+
+
 
 /**
  * Add by parsaatef
