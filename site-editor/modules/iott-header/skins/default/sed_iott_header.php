@@ -37,29 +37,71 @@
             </div>
 
             <div class="left-panel">
-                <?php query_posts("post_type=product&showposts=12&cat=3033"); while (have_posts()) : the_post(); ?>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumbnail-wrap">
-                                    <h6><span><?php echo __("View Product" , "iott" );?></span></h6>
-                                    <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-                                        <?php the_post_thumbnail('s4x3'); ?>
-                                    <?php endif; ?>
-                                </a>
-                            </div>
 
-                            <div class="col-sm-7">
-                                <div class="entry">
-                                    <h5><?php the_title(); ?></h5>
-                                    <h6><?php //the_field('subtitle'); ?></h6>
-                                    <hr class="little-separator" />
-                                    <p><?php the_excerpt(); ?></p>
+                <?php
+
+                $args = array(
+                    'posts_per_page'   => -1,
+                    'post_type'         => 'product',
+                    'meta_key'          => 'sed_show_in_nav',
+                    'meta_value'        => true
+                );
+
+                $custom_query = new WP_Query( $args );
+                ?>
+
+                <?php
+                $custom_query = new WP_Query( $args );
+
+                if ( $custom_query->have_posts() ) {
+
+                    while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
+                        <div class="item">
+                            <div class="row">
+
+                                <div class="col-sm-3">
+
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumbnail-wrap">
+
+                                        <h6><span><?php echo __("View Product", "iott"); ?></span></h6>
+
+                                        <?php
+
+                                        $img = get_sed_attachment_image_html( $attachment_id , "thumbnail" );
+
+                                        if ( ! $img ) {
+                                            $img = array();
+                                            $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+                                        }
+
+                                        echo $img['thumbnail'];
+
+                                        ?>
+
+
+                                    </a>
+
                                 </div>
+
+                                <div class="col-sm-7">
+                                    <div class="entry">
+                                        <h5><?php the_title(); ?></h5>
+                                        <h6><?php the_field('subtitle'); ?></h6>
+                                        <hr class="little-separator"/>
+                                        <p><?php the_excerpt(); ?></p>
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                <?php endwhile; wp_reset_query(); ?>
+                        <?php
+                    endwhile;
+
+                    wp_reset_postdata();
+
+                }
+                wp_reset_query(); ?>
             </div>
 
         </div>
