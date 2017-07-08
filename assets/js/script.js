@@ -87,7 +87,33 @@
     }
     $(document).ready(function() {
         "use strict";
-        init()
+
+        init();
+
+        /**
+         * Vertical Menu Accordion
+         */
+        var _SedVMenu = $('#sed_iott_header_vertical_menu');
+
+        _SedVMenu.find('li.menu-item.menu-item-has-children > a').click(function(e){
+
+            e.preventDefault();
+
+            var $this = $(this);
+
+            if ($this.next().hasClass('active')) {
+                $this.next().removeClass('active');
+                $this.next().slideUp(350);
+            } else {
+                $this.parent().parent().find('li .sub-menu').removeClass('active');
+                $this.parent().parent().find('li .sub-menu').slideUp(350);
+                $this.next().addClass('active');
+                $this.next().slideDown(350);
+            }
+
+        });
+
+
     }), $(function() {
         $('a[href*="#"]:not([href="#"])').click(function() {
             if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {

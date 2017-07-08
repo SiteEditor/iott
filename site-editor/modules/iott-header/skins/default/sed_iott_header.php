@@ -5,7 +5,7 @@
         <div class="sed-row-boxed">
             <div class="right-panel pull-right">
 
-                <ul class="list-menu list-unstyled">
+                <ul id="sed_iott_header_vertical_menu" class="list-menu list-unstyled">
 
                     <?php wp_nav_menu(array('theme_location' => 'top', 'container' => '', 'items_wrap' => '%3$s')); ?>
 

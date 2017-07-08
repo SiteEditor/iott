@@ -531,3 +531,12 @@ body.isNavigationOpen #new_h_menu.sed-active-sticky{
     opacity: 0;
     z-index: -1;
 }
+
+#sed_iott_header_vertical_menu ul.sub-menu{
+    padding-left: 1em;
+    overflow: hidden;
+    display: none;
+}
+
+
+
