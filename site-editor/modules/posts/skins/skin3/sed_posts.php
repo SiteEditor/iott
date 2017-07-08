@@ -1,4 +1,4 @@
-<div <?php echo $sed_attrs; ?> class="module module-posts module-posts-skin2 <?php echo $class; ?> ">
+<div <?php echo $sed_attrs; ?> class="module module-posts module-posts-skin3 <?php echo $class; ?> ">
 
     <section class="timeline">
 
