@@ -210,9 +210,15 @@ h2.widget-title ,
 }
 .menu-container .right-panel ul.list-menu li {
     clear: both;
+    position: relative;
+    margin-right: 0;
+    width: 100%;
+    display: block;
+}
+.menu-container .right-panel ul.list-menu li > a {
+    clear: both;
     padding: 5px 5px 5px 10%;
     position: relative;
-    margin-right: -5px
 }
 /*.menu-container .right-panel ul.list-menu li ul.sub-menu {
     background: 0 0;
@@ -272,15 +278,18 @@ h2.widget-title ,
     color: #fff
 }*/
 .menu-container .right-panel ul.list-menu li:not(:last-child) {
-    margin-bottom: 10px
+    margin-bottom: 7px
 }
-.menu-container .right-panel ul.list-menu li:not(.search-form-container) {
+.menu-container .right-panel ul.list-menu li {
+    float: none;
+    width: 100%;
+}
+
+.menu-container .right-panel ul.list-menu li > a {
     border: 2px solid transparent;
     border-radius: 2px;
-    float: right;
-    width: auto
 }
-.menu-container .right-panel ul.list-menu li:not(.search-form-container)::before {
+.menu-container .right-panel ul.list-menu li > a::before {
     background: #08a;
     content: '';
     position: absolute;
@@ -288,14 +297,18 @@ h2.widget-title ,
     right: 0;
     bottom: 0;
     left: 100%;
-    z-index: 0;
-    transition: left .15s ease-out
+    z-index: -1;
+    transition: left .15s ease-out;
 }
-.menu-container .right-panel ul.list-menu li:not(.search-form-container):hover::before {
+.menu-container .right-panel ul.list-menu li > a:hover::before {
     left: 0
 }
-.menu-container .right-panel ul.list-menu li:hover {
-    border-color: #fff
+
+.menu-container .right-panel ul.list-menu li > a:hover ,
+.menu-container .right-panel ul.list-menu li > a:focus ,
+.menu-container .right-panel ul.list-menu li > a:active {
+    border-color: #fff;
+    outline: none;
 }
 /*
 .menu-container .right-panel ul.list-menu li:hover ul.sub-menu {
@@ -305,8 +318,9 @@ h2.widget-title ,
 }
 */
 .menu-container .right-panel ul.list-menu li a {
-    display: block;
-    position: relative
+    display: inline-block;
+    position: relative;
+    z-index: 1;
 }
 .menu-container .right-panel .socials li {
     background: rgba(0, 0, 0, .1);
@@ -359,16 +373,16 @@ h2.widget-title ,
     position: absolute;
     right: 0;
     bottom: 0;
-    left: 0
+    left: 0;
+    text-align: left;
 }
 .menu-container .right-panel .bottom-panel .closeMenu {
     background: url(images/iott-menu.jpg) center center no-repeat;
     display: block;
-    position: absolute;
-    bottom: 50px;
-    left: 0;
     width: 25%;
-    height: 70px
+    height: 70px;
+    margin: 0;
+    margin-right: auto;
 }
 .menu-container .right-panel .bottom-panel .closeMenu:hover {
     opacity: .7
@@ -468,6 +482,7 @@ h2.widget-title ,
 
 .menu-container ul {
     list-style-type: none;
+    margin: 0;
 }
 
 .menu-container .search-form input {
@@ -492,6 +507,11 @@ h2.widget-title ,
     color: #fff;
 }
 
+.menu-container .search-form-container {
+    width: 80%;
+    margin-bottom: 25px;
+}
+
 .menu-container .search-form button {
     background: url(images/21.png) center center no-repeat;
     border: none;
@@ -501,6 +521,7 @@ h2.widget-title ,
     height: 32px;
     opacity: .7;
     position: absolute;
+    right: 0;
     width: 26px;
     min-width: 0;
     padding: 0;
@@ -510,6 +531,10 @@ h2.widget-title ,
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.mCS-light.mCSB_scrollTools, .mCS-light-dark.mCSB_scrollTools {
+    display: none !important;
 }
 
 /**
@@ -533,7 +558,7 @@ body.isNavigationOpen #new_h_menu.sed-active-sticky{
 }
 
 #sed_iott_header_vertical_menu ul.sub-menu{
-    padding-left: 1em;
+    padding-right: 1.5em;
     overflow: hidden;
     display: none;
 }

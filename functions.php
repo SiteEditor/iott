@@ -22,6 +22,11 @@ function iott_enqueue_styles() {
      */
     wp_enqueue_script( "iott-script" , get_stylesheet_directory_uri() . '/assets/js/script.js' , array( 'jquery', 'carousel' , 'sed-livequery' , 'jquery-ui-accordion' ) , "1.0.0" , true );
 
+
+    wp_enqueue_script('jquery-scrollbar');
+
+    wp_enqueue_style('custom-scrollbar');
+
 }
 
 add_action( 'wp_enqueue_scripts', 'iott_enqueue_styles' , 0 );

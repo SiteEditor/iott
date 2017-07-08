@@ -5,21 +5,25 @@
         <div class="sed-row-boxed">
             <div class="right-panel pull-right">
 
-                <ul id="sed_iott_header_vertical_menu" class="list-menu list-unstyled">
+                <div class="sed_iott_header_vertical_menu_wrap">
+                    <ul id="sed_iott_header_vertical_menu" class="list-menu list-unstyled">
 
-                    <?php wp_nav_menu(array('theme_location' => 'top', 'container' => '', 'items_wrap' => '%3$s')); ?>
+                        <?php wp_nav_menu(array('theme_location' => 'top', 'container' => '', 'items_wrap' => '%3$s')); ?>
 
-                    <li class="search-form-container">
+                    </ul>
+                </div>
+
+                <div class="bottom-panel">
+
+                    <div class="search-form-container">
                         <form role="search" method="get" class="search-form form" action="<?php echo esc_url(home_url('/')); ?>">
                             <button type="submit" class="form-control"></button>
                             <input type="search" class="form-control" value="<?php echo get_search_query(); ?>" name="s" />
                         </form>
-                    </li>
+                    </div>
 
-                </ul>
-
-                <div class="bottom-panel">
                     <a href="#close" class="closeMenu toggle-navigation"></a>
+
                     <div class="socials">
                         <ul class="list-unstyled">
                             <?php if( !empty( $social_instagram ) ) { ?><li><a href="<?php esc_attr( esc_url( $social_instagram ) ); ?>" title="<?php echo __("Instagram" , "iott" );?>" class="instagram"></a></li><?php } ?>
