@@ -20,7 +20,7 @@ get_header(); ?>
 
             <div class="col-sm-9">
                 <section class="content">
-                    <?php armanam_breadcrumbs(); ?>
+                    <?php sed_iott_breadcrumbs(); ?>
 
                     <?php if ( have_posts() ) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
