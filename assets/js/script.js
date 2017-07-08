@@ -52,20 +52,23 @@
         })*/
     }
 
+    var _closeVNav = function(){
+        var c = $("body");
+        c.toggleClass("isNavigationOpen"), c.hasClass("isNavigationOpen") ? $(".menu-container").stop().fadeIn() : $(".menu-container").stop().fadeOut()
+    };
+
     function initEvents() {
+
         function a(a) {
             $(window).width() < 768 && a && (window.flag = !1, console.log("Events destroyed."), window.owl.trigger("destroy.owl.carousel").removeClass("owl-carousel owl-loaded"))
         }
 
-        function b() {
-            c.toggleClass("isNavigationOpen"), c.hasClass("isNavigationOpen") ? $(".menu-container").stop().fadeIn() : $(".menu-container").stop().fadeOut()
-        }
         console.log("Events fired.");
         var c = $("body");
         $(".toggle-navigation").on("click", function(a) {
-            b(), a.preventDefault()
+            _closeVNav(), a.preventDefault()
         }), $('[href="#contactForm"]').on("click", function(a) {
-            b(), a.preventDefault()
+            _closeVNav(), a.preventDefault()
         }), $(".menu-container .list-menu a").on("click", function(a) {
             $(this).parent().hasClass("menu-item-has-children") && a.preventDefault()
         }), window.flag = !0, $(window).on("resize", throttle(function() {
@@ -85,6 +88,7 @@
     function onchangeSelect(a, b) {
         "" !== window.location.search ? window.location.search.match(/orderby=([^&#]*)/) && "orderby" === b ? window.location.href = window.location.search.replace(/orderby=([^&#]*)/, "orderby=" + a.value) : window.location.search.match(/postperpage=([^&#]*)/) && "postperpage" === b ? window.location.href = window.location.search.replace(/postperpage=([^&#]*)/, "postperpage=" + a.value) : window.location.href = window.location.search + "&" + b + "=" + a.value : window.location.href = window.location.href + "?" + b + "=" + a.value
     }
+
     $(document).ready(function() {
         "use strict";
 
@@ -113,6 +117,19 @@
 
         });
 
+        _SedVMenu.find('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+
+                var a = $(this.hash);
+
+                if ( a.length || $("[name=" + this.hash.slice(1) + "]").length ) {
+
+                    _closeVNav();
+
+                }
+            }
+        });
+
 
     }), $(function() {
         $('a[href*="#"]:not([href="#"])').click(function() {
@@ -124,8 +141,6 @@
             }
         })
     });
-    var forEach = function(a, b, c) {
-        for (var d = 0; d < a.length; d++) b.call(c, d, a[d])
-    };
+
 
 })(jQuery);
