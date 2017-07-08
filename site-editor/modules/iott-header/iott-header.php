@@ -35,6 +35,7 @@ class PBIottHeader extends PBShortcodeClass{
             'social_instagram'          => '',
             'social_linkdin'            => '',
             'social_googleplus'         => '',
+            'social_facebook'           => '',
             'site_logo'                 => '',
             'header_slider'             => '',
         );
