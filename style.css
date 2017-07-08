@@ -214,7 +214,7 @@ h2.widget-title ,
     position: relative;
     margin-right: -5px
 }
-.menu-container .right-panel ul.list-menu li ul.sub-menu {
+/*.menu-container .right-panel ul.list-menu li ul.sub-menu {
     background: 0 0;
     list-style: none;
     padding: 0 20px 0 0;
@@ -270,7 +270,7 @@ h2.widget-title ,
 }
 .menu-container .right-panel ul.list-menu li ul.sub-menu li.menu-item:hover a {
     color: #fff
-}
+}*/
 .menu-container .right-panel ul.list-menu li:not(:last-child) {
     margin-bottom: 10px
 }
@@ -297,11 +297,13 @@ h2.widget-title ,
 .menu-container .right-panel ul.list-menu li:hover {
     border-color: #fff
 }
+/*
 .menu-container .right-panel ul.list-menu li:hover ul.sub-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(0)
 }
+*/
 .menu-container .right-panel ul.list-menu li a {
     display: block;
     position: relative
