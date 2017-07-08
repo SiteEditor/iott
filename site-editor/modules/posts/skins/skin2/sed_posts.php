@@ -1,4 +1,4 @@
-<div <?php echo $sed_attrs; ?> class="module module-posts module-posts-default <?php echo $class; ?> ">
+<div <?php echo $sed_attrs; ?> class="module module-posts module-posts-skin2 <?php echo $class; ?> ">
 
     <?php
     if( $show_title ) {
@@ -13,20 +13,26 @@
 
         ?>
 
-        <div class="sed-raw-about-images">
+        <section class="customers">
+            <div class="container">
+                <div class="slider-wrap">
+                    <div class="owl-carousel owl-theme">
 
-            <?php
-            // Start the Loop.
-            while ( $custom_query->have_posts() ){
-                $custom_query->the_post();
+                        <?php
+                        // Start the Loop.
+                        while ( $custom_query->have_posts() ){
+                            $custom_query->the_post();
 
-                include dirname(__FILE__) . '/content.php';
+                            include dirname(__FILE__) . '/content.php';
 
-            }
+                        }
 
-            ?>
+                        ?>
 
-        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <?php
 

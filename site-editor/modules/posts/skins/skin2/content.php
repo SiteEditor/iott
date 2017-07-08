@@ -1,12 +1,16 @@
-<div class="item">
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-            <?php the_post_thumbnail('s4x3'); ?>
-        <?php endif; ?>
+<div>
+    <a href="<?php the_field('customer_link_url'); ?>" title="<?php the_title(); ?>">
+        <?php
 
-        <div class="caption">
-            <h5><?php the_title(); ?><hr class="little-separator" /><span><?php the_field('subtitle'); ?></span></h5>
-            <p><?php the_excerpt(); ?></p>
-        </div>
+        $img = get_sed_attachment_image_html( $attachment_id , $images_size );
+
+        if ( ! $img ) {
+            $img = array();
+            $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+        }
+
+        echo $img['thumbnail'];
+
+        ?>
     </a>
 </div>

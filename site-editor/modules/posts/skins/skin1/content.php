@@ -1,12 +1,17 @@
-<div class="item">
+<li>
     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-            <?php the_post_thumbnail('s4x3'); ?>
-        <?php endif; ?>
+        <?php
 
-        <div class="caption">
-            <h5><?php the_title(); ?><hr class="little-separator" /><span><?php the_field('subtitle'); ?></span></h5>
-            <p><?php the_excerpt(); ?></p>
-        </div>
+        $post_title = get_the_title();
+
+        if( strlen( $post_title ) > $excerpt_length ){
+
+            $post_title = mb_substr( get_the_title(), 0, $excerpt_length ) . "...";
+
+        }
+
+        echo $post_title;
+
+        ?>
     </a>
-</div>
+</li>
