@@ -32,7 +32,11 @@ class PBIottHeader extends PBShortcodeClass{
     function get_atts(){
 
         $atts = array(
-            //'title_length'          => 50,
+            'social_instagram'          => '',
+            'social_linkdin'            => '',
+            'social_googleplus'         => '',
+            'site_logo'                 => '',
+            'header_slider'             => '',
         );
 
         return $atts;
@@ -57,7 +61,73 @@ class PBIottHeader extends PBShortcodeClass{
             'field_spacing'       => 'sm'
         ) );
 
+        global $wpdb;
+        $rs = $wpdb->get_results(
+            "
+          SELECT id, title, alias
+          FROM " . $wpdb->prefix . "revslider_sliders
+          ORDER BY id ASC LIMIT 999
+          "
+        );
+
+        $revsliders = array( );
+        if ( $rs ) {
+            foreach ( $rs as $slider ) {
+                $revsliders[ $slider->alias ] = $slider->title;
+            }
+        } else {
+            $revsliders[ 0 ] = __( 'No sliders found', 'site-editor' );
+        }
+
+
         $params = array(
+
+            'social_instagram' => array(
+                "type"          => "url" ,
+                "label"         => __("Instagram Url", "site-editor"),
+                "description"   => __("Your Instagram Profile Url", "site-editor"),
+                "placeholder"   => __("E.g www.siteeditor.org", "site-editor"),
+                "panel"         => "iott_header_settings_panel" ,
+            ),
+
+            'social_linkdin' => array(
+                "type"          => "url" ,
+                "label"         => __("Linkedin Url", "site-editor"),
+                "description"   => __("Your Linkedin Profile Url", "site-editor"),
+                "placeholder"   => __("E.g www.siteeditor.org", "site-editor"),
+                "panel"         => "iott_header_settings_panel" ,
+            ),
+
+            'social_googleplus' => array(
+                "type"          => "url" ,
+                "label"         => __("Google Plus Url", "site-editor"),
+                "description"   => __("Your Google Plus Profile Url", "site-editor"),
+                "placeholder"   => __("E.g www.siteeditor.org", "site-editor"),
+                "panel"         => "iott_header_settings_panel" ,
+            ),
+
+            'social_facebook' => array(
+                "type"          => "url" ,
+                "label"         => __("Facebook Url", "site-editor"),
+                "description"   => __("Your Facebook Profile Url", "site-editor"),
+                "placeholder"   => __("E.g www.siteeditor.org", "site-editor"),
+                "panel"         => "iott_header_settings_panel" ,
+            ),
+
+            'site_logo' => array(
+                "type"          => "image" ,
+                "label"         => __("Logo", "site-editor"),
+                "description"   => __("This option allows you to set a logo", "site-editor"),
+                'remove_action' => true ,
+                "panel"         => "iott_header_settings_panel" ,
+            ),
+
+            'header_slider' => array(
+                "type"          => "select" ,
+                "label"         => __("Select Slider", "site-editor"),
+                "choices"       =>  $revsliders,
+                "panel"         => "iott_header_settings_panel" ,
+            ),
 
             'row_container' => array(
                 'type'                => 'row_container',
