@@ -12,13 +12,24 @@ Tags:          agency, business, clean, corporate, creative, dms, modern, multi-
 Text Domain:   iott
 */
 
-html {
+/*html {
   font-size: 15px;
 }
 
 body {
   font-family: "B Yekan";
   font-size: 15px;
+}
+*/
+
+.clearfix:before, 
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
 }
 
 h5 ,
@@ -48,13 +59,16 @@ h2.widget-title ,
 
 #header {
     background: url(images/header-bg.jpg) top left no-repeat #e2e2e2;
-    background-size: cover
+    background-size: cover;
+    min-height: 320px;
+    position: relative;
 }
 #header .logo {
     float: left;
-    margin-top: 46px;
+    margin-top: 40px;
     height: 28px;
-    z-index: 2
+    z-index: 2;
+    position: relative;
 }
 #header .logo h1,
 #header .logo h2 {
@@ -72,8 +86,9 @@ h2.widget-title ,
 #header .menu {
     font-size: 9px;
     float: right;
-    margin-top: 46px;
-    z-index: 2
+    margin-top: 40px;
+    z-index: 2;
+    position: relative;
 }
 #header .menu button {
     background: 0 0;
@@ -81,24 +96,20 @@ h2.widget-title ,
     padding-right: 0
 }
 #header .menu .toggle-navigation span {
-    display: block;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 40px;
     position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    display: block;
 }
 
 #header .menu .toggle-menu-hamburger-open {
-    background: url(images/1.png) left top no-repeat;
+    background: url(images/1.png) center center no-repeat;
     background-size: contain;
     display: block;
+}
+
+#header .menu .toggle-menu-hamburger-close {
+    margin-top: -40px;
 }
 
 #header .menu .toggle-menu-hamburger-close,
@@ -108,14 +119,17 @@ h2.widget-title ,
 
 .isNavigationOpen #header .menu .toggle-menu-hamburger-close {
     display: block;
-    background: url(images/2.png) left top no-repeat;
+    background: url(images/2.png) center center no-repeat;
     background-size: contain;
+    margin-top: 0px;
 }
 
 #header .socials {
     float: right;
-    padding: 32px 0 16px 18px;
-    text-align: center
+    padding: 32px 1px 16px 18px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
 }
 #header .socials a {
     border-radius: 50%;
@@ -123,10 +137,10 @@ h2.widget-title ,
     display: block;
     line-height: 26px;
     margin-bottom: 6px;
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
     text-indent: -9999px;
-    opacity: 1
+    opacity: 1;
 }
 #header .socials a.instagram {
     background: url(images/3.png) no-repeat;
@@ -157,6 +171,15 @@ h2.widget-title ,
     color: #777
 }
 
+.rev_slider_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
 #header ul {
     list-style-type: none;
 }
@@ -171,7 +194,7 @@ h2.widget-title ,
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 2
+    z-index: 2;
 }
 .menu-container .right-panel {
     background: #6e6e70;
@@ -445,10 +468,53 @@ h2.widget-title ,
     list-style-type: none;
 }
 
+.menu-container .search-form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #c9c9cb;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+    line-height: 32px;
+    padding: 0 10px;
+    padding-right: 40px;
+    height: 32px;
+}
+
+.menu-container .search-form input:focus {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #c9c9cb;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+}
+
+.menu-container .search-form button {
+    background: url(images/21.png) center center no-repeat;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    line-height: 32px;
+    height: 32px;
+    opacity: .7;
+    position: absolute;
+    width: 26px;
+    min-width: 0;
+    padding: 0;
+}
+
+.menu-container .search-form input[type="search"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /**
  * Add by parsaatef
  *
  */
+
 #new_h_menu{
     opacity: 0;
     z-index: -1;
@@ -463,5 +529,3 @@ body.isNavigationOpen #new_h_menu.sed-active-sticky{
     opacity: 0;
     z-index: -1;
 }
-
-

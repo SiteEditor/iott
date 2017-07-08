@@ -26,7 +26,7 @@
 	                        <?php if( !empty( $social_linkdin ) ) { ?><li><a href="<?php esc_attr( esc_url( $social_linkdin ) ); ?>" title="<?php echo __("Linkdin" , "iott" );?>" class="linkdin"></a></li><?php } ?>
 	                        <?php if( !empty( $social_googleplus )) { ?><li><a href="<?php esc_attr( esc_url( $social_googleplus ) ); ?>" title="<?php echo __("Google Plus" , "iott" );?>" class="google"></a></li><?php } ?>
 	                        <?php if( !empty( $social_facebook ) ) { ?><li><a href="<?php esc_attr( esc_url( $social_facebook ) ); ?>" title="<?php echo __("Facebook" , "iott" );?>" class="facebook"></a></li><?php } ?>
-                        </ul>!
+                        </ul>
                     </div>
                 </div>
 
@@ -105,7 +105,7 @@
 
         </div>
 
-        <div class="banner">
+        <div class="rev_slider_wrap">
             <?php echo do_shortcode('[rev_slider alias="'.$header_slider.'"]'); ?>
             <h3><?php //the_field('top_title', 'option'); ?></h3>
             <h5><?php //the_field('sec_title', 'option'); ?></h5>
