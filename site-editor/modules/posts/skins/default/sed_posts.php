@@ -14,21 +14,21 @@
         ?>
 
     <section class="features">
-            <div class="slider-wrap">
-                <div class="carousel" >
+        <div class="slider-wrap">
+            <div class="carousel" >
 
-            <?php
-            // Start the Loop.
-            while ( $custom_query->have_posts() ){
-                $custom_query->the_post();
+        <?php
+        // Start the Loop.
+        while ( $custom_query->have_posts() ){
+            $custom_query->the_post();
 
-                include dirname(__FILE__) . '/content.php';
+            include dirname(__FILE__) . '/content.php';
 
-            }
+        }
 
-            ?>
-                </div>
+        ?>
             </div>
+        </div>
     </section>
 
         <?php

@@ -1,8 +1,10 @@
-<div>
+<div class="item">
     <a href="<?php the_field('customer_link_url'); ?>" title="<?php the_title(); ?>">
         <?php
 
-        $img = get_sed_attachment_image_html( $attachment_id , $images_size );
+        $attachment_id   = get_post_thumbnail_id();
+        
+        $img = get_sed_attachment_image_html( $attachment_id , "" , "220X160" );
 
         if ( ! $img ) {
             $img = array();

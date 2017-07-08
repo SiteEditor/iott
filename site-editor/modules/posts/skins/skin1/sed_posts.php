@@ -10,7 +10,7 @@
 
         <section class="newsbar">
 
-            <div class="container">
+            <div class="sed-row-boxed">
 
                 <ul class="hidden" id="typed-strings">
 
@@ -27,45 +27,48 @@
 
                 </ul>
 
-                <div class="col-sm-8 col-lg-9">
-                    <span class="newsbar__title"><?php echo $title;?>: </span>
-                    <span class="virtual-list-item js-newsbar-functionality"></span>
-                </div>
+                <div class="row">
 
-                <div class="col-sm-4 col-lg-3">
+                    <div class="col-sm-8 col-lg-9">
+                        <span class="newsbar__title"><?php echo $title;?>: </span>
+                        <span class="virtual-list-item js-newsbar-functionality"></span>
+                    </div>
 
-                    <p class="newsbar__description text-left">
-                        <?php
+                    <div class="col-sm-4 col-lg-3">
 
-                        $link = get_post_type_archive_link( $args['post_type'] );
+                        <div class="newsbar__description text-left">
+                            <?php
 
-                        if( !empty( $taxonomy ) && !empty( $terms ) ){
+                            $link = get_post_type_archive_link( $args['post_type'] );
 
-                            $terms = is_string( $terms ) && !empty( $terms ) ? explode( "," , $terms ) : array();
+                            if( !empty( $taxonomy ) && !empty( $terms ) ){
 
-                            if( isset( $terms[0] ) ){
+                                $terms = is_string( $terms ) && !empty( $terms ) ? explode( "," , $terms ) : array();
 
-                                $link = get_term_link( get_term( $terms[0] ) , $taxonomy );
+                                if( isset( $terms[0] ) ){
+
+                                    $link = get_term_link( get_term( $terms[0] ) , $taxonomy );
+
+                                }
 
                             }
 
-                        }
+                            $link = esc_attr( esc_url( $link ) );
 
-                        $link = esc_attr( esc_url( $link ) );
+                            $lik_start = sprintf(  '<a href="%1$s" title="%2$s">', $link , __("click here" , "iott") );
 
-                        $lik_start = sprintf(  '<a href="%1$s" title="%2$s">', $link , __("click here" , "iott") );
+                            $link_end = '</a>';
 
-                        $link_end = '</a>';
+                            echo sprintf(
+                                __('For more information %1$s click here %2$s',"iott") ,
+                                $lik_start,
+                                $link_end
+                            );
 
-                        echo sprintf(
-                            __('For more information %1$s click here %2$s',"iott") ,
-                            $lik_start,
-                            $link_end
-                        );
+                            ?>
+                        </div>
 
-                        ?>
-                    </p>
-
+                    </div>
                 </div>
 
             </div>
