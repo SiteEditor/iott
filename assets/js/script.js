@@ -340,7 +340,33 @@
             ]
         });
 
-    });    
+    });     
+
+
+    $('.single-product-thumbnails-slider .slider-wrap > .carousel').slick({
+        rtl                 : $rtl,
+        slidesToShow        : 1,
+        slidesToScroll      : 1,
+        arrows              : false,
+        fade                : true,
+        asNavFor            : '.single-product-nav-slider .slider-wrap > .carousel'
+    });
+ 
+
+    $('.single-product-nav-slider .slider-wrap > .carousel').slick({
+        rtl                 : $rtl,
+        slidesToShow        : 3,
+        slidesToScroll      : 1,
+        asNavFor            : '.single-product-thumbnails-slider .slider-wrap > .carousel',
+        arrows              : true,
+        touchMove           : true ,
+        infinite            : true, 
+        prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
+        nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
+        //centerMode          : true,
+        focusOnSelect       : true
+    });
+    
 
 
 })(jQuery);

@@ -2382,7 +2382,8 @@ border: 0 none;
     max-width: 100%!important
 }
 .single-product .content .product .entry-header {
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    padding: 0;
 }
 .single-product .content .product .entry-header h3 {
     margin: 0
@@ -2466,18 +2467,26 @@ border: 0 none;
 }
 
 .productSections .carousel .item {
-    border: 1px solid #8c8c8c;
     margin-left: 10px;
     width: 160px;
     height: 160px;
     overflow: hidden;
     position: relative;
 }
+
+.productSections .carousel .item a {
+    border: 1px solid #8c8c8c;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .productSections .carousel .item img {
     display: block;
     width: 100%;
     height: auto;
 }
+
 .productSections .carousel .item .caption {
     background: rgba(255, 255, 255, .8);
     border: 1px solid #08a;
@@ -2493,6 +2502,7 @@ border: 0 none;
     opacity: 0;
     transition: opacity .15s linear
 }
+
 .productSections .carousel .item .caption h5 {
     border-bottom: 1px solid #08a;
     font-size: 13px;
@@ -2518,6 +2528,29 @@ border: 0 none;
     opacity: 1
 }
 
+
+.single-product-thumbnails-slider .slick-slider ,
+.single-product-nav-slider .slick-slider {
+    margin: 0;
+}
+
+.single-product-nav-slider .slick-list {
+    margin-left: -10px;
+}
+
+.single-product-nav-slider .carousel .item {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.single-product-thumbnails-slider .carousel .item img ,
+.single-product-nav-slider .carousel .item img {
+    border: 1px solid #8c8c8c;
+    margin-left: 10px;    
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 
 

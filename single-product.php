@@ -22,13 +22,70 @@ get_header(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="row">
                         <div class="col-md-4">
-                            <?php if ('' !== get_the_post_thumbnail()) : ?>
+                            <?php //if ('' !== get_the_post_thumbnail()) : ?>
                                 <div class="post-thumbnail">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('s1x1'); ?>
+                                    <a href="<?php //the_permalink(); ?>">
+                                        <?php //the_post_thumbnail('s1x1'); ?>
                                     </a>
                                 </div>
-                            <?php endif; ?>
+                            <?php //endif; ?>
+
+                            <div class="single-product-thumbnails-slider">
+                                <div class="slider-wrap">
+                                    <div class="carousel"> 
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Denon-HEOS-1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/OORT-2.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Triby-1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Aether-Cone.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/allure-eversense.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/click-grow-1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2017/07/Fred-One-Touch-Smart-Home-Mirror-400x358.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-product-nav-slider">
+                                <div class="slider-wrap">
+                                    <div class="carousel"> 
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Denon-HEOS-1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/OORT-2.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Triby-1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Aether-Cone.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/allure-eversense.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2016/05/click-grow-1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://iott.ir/wp-content/uploads/2017/07/Fred-One-Touch-Smart-Home-Mirror-400x358.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="col-md-8">
