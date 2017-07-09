@@ -180,6 +180,37 @@ function sed_iott_breadcrumbs() {
     } //!is_home() && !is_front_page() || is_paged()
 }
 
+/*
+ * Get post-type categories
+ *
+ * $id int require
+ * $tax string require eg.: 'product_category'
+ * $before string optional
+ * $after string optional
+ *
+ * return str
+ */
+function get_terms_string($id, $tax, $before = null, $after = null) {
+    $arr = get_the_terms($id, $tax);
+    $str = '';
+    $str .= $before;
+
+    if( is_array( $arr ) ) {
+
+        foreach ($arr as $key => $value) {
+            $str .= "<a href='" . get_term_link($value->term_id) . "'>" . $value->name . "</a>";
+
+            if (count($arr) != $key + 1) {
+                $str .= "، ";
+            }
+        }
+
+    }
+
+    $str .= $after;
+    return $str;
+}
+
 
 
 

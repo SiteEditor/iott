@@ -12,13 +12,52 @@
 
 get_header(); ?>
 
-    <main class="main">
-        <div class="container">
-            <div class="col-sm-3">
-                <?php get_sidebar(); ?>
-            </div>
+    <div class="wrap">
 
-            <div class="col-sm-9">
+        <?php if ( have_posts() ) : ?>
+
+            <?php
+
+            $show_blog_archive_title = (bool)get_theme_mod( 'sed_show_blog_archive_title' , '1' );
+
+            $show_blog_archive_description = (bool)get_theme_mod( 'sed_show_blog_archive_description' , '1' );
+
+            if( $show_blog_archive_title === true || $show_blog_archive_description === true || site_editor_app_on() ) {
+
+                $hide_class = ($show_blog_archive_title === false && $show_blog_archive_description === false) ? "hide" : "";
+                ?>
+
+                <header class="page-header <?php echo esc_attr( $hide_class ) ;?>">
+
+                    <?php
+
+                    if( $show_blog_archive_title === true || site_editor_app_on() ) {
+
+                        $hide_class = ($show_blog_archive_title === false) ? "hide" : "";
+
+                        the_archive_title('<h1 class="page-title '. esc_attr( $hide_class ) .'">', '</h1>');
+
+                    }
+
+                    if( $show_blog_archive_description === true || site_editor_app_on() ) {
+
+                        $hide_class = ($show_blog_archive_description === false) ? "hide" : "";
+
+                        the_archive_description( '<div class="taxonomy-description '. esc_attr( $hide_class ) .'">', '</div>' );
+
+                    }
+
+                    ?>
+
+                </header><!-- .page-header -->
+
+            <?php } ?>
+
+        <?php endif; ?>
+
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+
                 <section class="content">
                     <?php $i = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('post row'); ?>>
@@ -76,7 +115,7 @@ get_header(); ?>
                             </header>
 
                             <section class="entry-content">
-                                <p class="excerpt"><?php the_excerpt(); ?></p>
+                                <div class="excerpt"><?php the_excerpt(); ?></div>
 
                                 <?php if (get_field('advertise_image') != null) { ?>
                                 <div class="sponsor">
@@ -120,15 +159,6 @@ get_header(); ?>
                             </section>
                         </div>
                         <?php } else { ?>
-                        <div class="col-lg-6 hidden-lg">
-                            <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-                                <div class="post-thumbnail">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('home'); ?>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
 
                         <div class="col-lg-6">
                             <header class="entry-header">
@@ -141,7 +171,7 @@ get_header(); ?>
                             </header>
 
                             <section class="entry-content">
-                                <p class="excerpt"><?php the_excerpt(); ?></p>
+                                <div class="excerpt"><?php the_excerpt(); ?></div>
 
                                 <div class="sponsor">
                                     <h6>Sponsored By:</h6>
@@ -173,8 +203,10 @@ get_header(); ?>
                     else : 
                     endif; ?>
                 </section>
-            </div>
-        </div>
-    </main>
+
+            </main><!-- #main -->
+        </div><!-- #primary -->
+        <?php get_sidebar(); ?>
+    </div><!-- .wrap -->
 
 <?php get_footer();
