@@ -2178,7 +2178,7 @@ h2.widget-title ,
 }
 
 .timeline-content-area .content {
-    padding: 30px 60px 40px;
+    padding: 0px 60px 40px;
     margin: -5px 18px;
     border-left: 2px solid #ccc;
 }
@@ -2188,7 +2188,24 @@ h2.widget-title ,
     border-right: 2px solid #ccc;
 }
 
-.timeline-content-area .content p {
+
+@media (max-width: 500px) {
+
+	.timeline-content-area .content {
+	    padding: 0px 20px 30px;
+	}
+
+}	
+
+.timeline-content-area .content + .content .content-desc {
+    border-top: 1px solid #ddd;
+}
+
+.timeline-content-area .content .content-desc {
+    padding-top: 30px;
+}
+
+.timeline-content-area .content p:last-child {
     margin: 0;
 }
 
@@ -2203,6 +2220,46 @@ h2.widget-title ,
 .timeline-content-area .content .image img {
     max-height: 100%;
     width: auto;
+}
+
+.timeline-content-area.orange .date-wrap .date span ,
+.timeline-content-area.orange .date-wrap .line {
+    background-color: #f6813c;
+}
+
+.timeline-content-area.orange .date-wrap .full-date-wrap ,
+.timeline-content-area.orange .date-wrap .full-date-wrap .day-num {
+    border-color: #f6813c;
+}
+
+.timeline-content-area.green .date-wrap .date span ,
+.timeline-content-area.green .date-wrap .line {
+    background-color: #13ad8b;
+}
+
+.timeline-content-area.green .date-wrap .full-date-wrap ,
+.timeline-content-area.green .date-wrap .full-date-wrap .day-num {
+    border-color: #13ad8b;
+}
+
+.timeline-content-area.purple .date-wrap .date span ,
+.timeline-content-area.purple .date-wrap .line {
+    background-color: #4a3390;
+}
+
+.timeline-content-area.purple .date-wrap .full-date-wrap ,
+.timeline-content-area.purple .date-wrap .full-date-wrap .day-num {
+    border-color: #4a3390;
+}
+
+.timeline-content-area.pink .date-wrap .date span ,
+.timeline-content-area.pink .date-wrap .line {
+    background-color: #b72887;
+}
+
+.timeline-content-area.pink .date-wrap .full-date-wrap ,
+.timeline-content-area.pink .date-wrap .full-date-wrap .day-num {
+    border-color: #b72887;
 }
 
 
