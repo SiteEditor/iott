@@ -265,8 +265,8 @@
         $(this).slick({
             mobileFirst         : true ,
             arrows              : true,
-            slidesToShow        : 6,
-            slidesToScroll      : 6,
+            slidesToShow        : 16,
+            slidesToScroll      : 16,
             dots                : false,
             //centerMode          : false,
             rtl                 : $rtl,
@@ -278,8 +278,8 @@
             responsive: [{
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 6,
-                        slidesToScroll: 6,  
+                        slidesToShow: 16,
+                        slidesToScroll: 16,  
                     }
                 },
                 {
