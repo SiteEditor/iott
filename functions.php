@@ -39,7 +39,18 @@ function sed_iott_theme_setup() {
 
     load_child_theme_textdomain( 'iott', get_stylesheet_directory() . '/languages' );
 
+    remove_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
+
 }
+
+function iott_excerpt_more( $link ) {
+    if ( is_admin() ) {
+        return $link;
+    }
+
+    return ' &hellip; ';
+}
+add_filter( 'excerpt_more', 'iott_excerpt_more' );
 
 /**
  * Add Site Editor Modules

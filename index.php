@@ -16,13 +16,37 @@
  */
 get_header(); ?>
 
-<main class="main">
-    <div class="container">
-        <div class="col-sm-3">
-            <?php get_sidebar(); ?>
-        </div>
+<div class="wrap">
 
-        <div class="col-sm-9">
+    <?php
+
+    $show_blog_archive_title = (bool)get_theme_mod( 'sed_show_blog_archive_title' , '1' );
+
+    if( $show_blog_archive_title === true || site_editor_app_on() ) {
+
+        $hide_class = ($show_blog_archive_title === false) ? "hide" : "";
+
+        ?>
+
+        <?php if (is_home() && !is_front_page()) : ?>
+            <header class="page-header <?php echo esc_attr( $hide_class ) ;?>">
+                <h1 class="page-title"><?php single_post_title(); ?></h1>
+            </header>
+        <?php else : ?>
+            <header class="page-header <?php echo esc_attr( $hide_class ) ;?>">
+                <h2 class="page-title"><?php _e('Blog', 'twentyseventeen'); ?></h2>
+            </header>
+        <?php endif; ?>
+
+        <?php
+
+    }
+
+    ?>
+
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+
             <section class="content">
                 <?php $i = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
@@ -50,7 +74,7 @@ get_header(); ?>
                         </header>
 
                         <section class="entry-content">
-                            <p class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></p>
+                            <div class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></div>
 
                             <?php if (get_field('advertise_image') != null) { ?>
                             <div class="sponsor">
@@ -67,16 +91,6 @@ get_header(); ?>
 
                 <?php } else { ?>
 
-                    <div class="col-lg-6 hidden-lg">
-                        <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-                            <div class="post-thumbnail">
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('home'); ?>
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-
                     <div class="col-lg-6">
                         <header class="entry-header">
                             <div class="category">
@@ -88,7 +102,7 @@ get_header(); ?>
                         </header>
 
                         <section class="entry-content">
-                            <p class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></p>
+                            <div class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></div>
 
                             <div class="sponsor">
                                 <h6>Sponsored By:</h6>
@@ -119,8 +133,10 @@ get_header(); ?>
                 else :
                 endif; ?>
             </section>
-        </div>
-    </div>
-</main>
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
+        <?php get_sidebar(); ?>
+</div><!-- .wrap -->
 
 <?php get_footer();
