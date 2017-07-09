@@ -18,10 +18,23 @@ if (($current_month != iott_get_field('event_month')) && iott_get_field('event_m
 
         <div class="hover-desc">
 
+            <?php
+            $event_logo_id = iott_get_field('event_image');
+
+            $img = get_sed_attachment_image_html( $event_logo_id , "medium" );
+
+            if ( ! $img ) {
+                $img = array();
+                $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+            }
+            ?>
+
             <?php if (!iott_get_field('event_is_active')) { ?>
 
                 <div class="image">
-                    <img src="<?php iott_the_field('event_image'); ?>" alt="<?php the_title(); ?>">
+
+                    <?php echo $img['thumbnail'] ; ?>
+
                 </div>
 
                 <div class="text">
@@ -45,11 +58,12 @@ if (($current_month != iott_get_field('event_month')) && iott_get_field('event_m
                 </div>
 
                 <div class="image">
-                    <img src="<?php iott_the_field('event_image'); ?>" alt="<?php the_title(); ?>">
+                    <?php echo $img['thumbnail'] ; ?>
+                   <!-- <img src="<?php //iott_the_field('event_image'); ?>" alt="<?php //the_title(); ?>"> -->
                 </div>
 
                 <div class="text">
-                    <p><?php the_excerpt(); ?></p>
+                    <div><?php the_excerpt(); ?></div>
                 </div>
 
             <?php } ?>
