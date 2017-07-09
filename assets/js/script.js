@@ -85,10 +85,6 @@
         }
     }
 
-    function onchangeSelect(a, b) {
-        "" !== window.location.search ? window.location.search.match(/orderby=([^&#]*)/) && "orderby" === b ? window.location.href = window.location.search.replace(/orderby=([^&#]*)/, "orderby=" + a.value) : window.location.search.match(/postperpage=([^&#]*)/) && "postperpage" === b ? window.location.href = window.location.search.replace(/postperpage=([^&#]*)/, "postperpage=" + a.value) : window.location.href = window.location.search + "&" + b + "=" + a.value : window.location.href = window.location.href + "?" + b + "=" + a.value
-    }
-
     $(document).ready(function() {
         "use strict";
 
@@ -128,6 +124,16 @@
 
                 }
             }
+        });
+
+        var _onchangeSelect = function ( val , b ) {
+            "" !== window.location.search ? window.location.search.match(/orderby=([^&#]*)/) && "orderby" === b ? window.location.href = window.location.search.replace(/orderby=([^&#]*)/, "orderby=" + val) : window.location.search.match(/postperpage=([^&#]*)/) && "postperpage" === b ? window.location.href = window.location.search.replace(/postperpage=([^&#]*)/, "postperpage=" + val) : window.location.href = window.location.search + "&" + b + "=" + val : window.location.href = window.location.href + "?" + b + "=" + val
+        };
+
+        $(".iott-change-sort-select").on("change" , function(){
+
+            _onchangeSelect( $(this).val() , $(this).data("value") );
+
         });
 
 

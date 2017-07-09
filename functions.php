@@ -235,5 +235,66 @@ function iott_the_field( $key , $post_id = 0 ){
 }
 
 
+// Have homepage & archive pages display different post counts
+// https://solopine.ticksy.com/article/3436/
+// http://www.dezzain.com/wordpress-tutorials/different-post-count-in-wordpress-search-and-archive-page/
+function iott_limit_posts_per_page() {
+    if (is_home()) {
+        return 8;
+    } else {
+        return 12;
+    }
+}
+add_filter ('pre_option_posts_per_page', 'iott_limit_posts_per_page');
+
+/*
+ * Sort posts in a custom post-type
+ */
+function iott_custom_posttype_sort($query) {
+
+    $post_type = $query->get('post_type');
+
+    if ( in_array( $post_type , array( 'product' , 'sed_events' , 'chart' , 'iott_video' , 'sed_infographic' ) ) ) {
+
+        if( isset( $_GET['orderby'] ) && !empty( $_GET['orderby'] ) ) {
+
+            $order_by = $_GET['orderby'];
+
+            switch ( $order_by ) {
+                case 'date_asc':
+                    $query->set('orderby', 'date');
+                    $query->set('order', 'ASC');
+                    break;
+                case 'data_desc':
+                    $query->set('orderby', 'date');
+                    $query->set('order', 'DESC');
+                    break;
+                case 'title_asc':
+                    $query->set('orderby', 'title');
+                    $query->set('order', 'ASC');
+                    break;
+                case 'title_desc':
+                    $query->set('orderby', 'title');
+                    $query->set('order', 'DESC');
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        if( isset( $_GET['postperpage'] ) && !empty( $_GET['postperpage'] ) ) {
+
+            $per_page = (int)$_GET['postperpage'];
+
+            $query->set('posts_per_page', $per_page);
+
+        }
+
+    }
+}
+
+add_action('pre_get_posts', 'iott_custom_posttype_sort');
 
 

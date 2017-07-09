@@ -19,69 +19,88 @@ get_header(); ?>
                 <?php sed_iott_breadcrumbs(); ?>
 
                 <?php if (have_posts()) : the_post(); ?>
+
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="row">
                         <div class="col-md-4">
-                            <?php //if ('' !== get_the_post_thumbnail()) : ?>
-                                <div class="post-thumbnail">
-                                    <a href="<?php //the_permalink(); ?>">
-                                        <?php //the_post_thumbnail('s1x1'); ?>
-                                    </a>
-                                </div>
-                            <?php //endif; ?>
+
+                            <?php
+                            $product_gallery = iott_get_field( 'iott_product_gallery' );
+
+                            $product_gallery = is_string( $product_gallery ) && !empty( $product_gallery ) ? explode( "," , $product_gallery ) : $product_gallery;
+
+                            $product_gallery = is_array( $product_gallery ) ? $product_gallery : array();
+
+                            if ( '' !== get_the_post_thumbnail() ){
+
+                                $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+
+                                array_unshift( $product_gallery , $post_thumbnail_id );
+
+                            }
+
+                            $product_gallery = array_filter( $product_gallery , 'absint' );
+
+                            ?>
 
                             <div class="single-product-thumbnails-slider">
                                 <div class="slider-wrap">
-                                    <div class="carousel"> 
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Denon-HEOS-1.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/OORT-2.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Triby-1.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Aether-Cone.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/allure-eversense.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/click-grow-1.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2017/07/Fred-One-Touch-Smart-Home-Mirror-400x358.jpg">
-                                        </div>
+                                    <div class="carousel">
+
+                                        <?php
+                                        if( !empty( $product_gallery ) ) {
+                                            foreach ($product_gallery AS $attach_id ) {
+
+                                                $img = get_sed_attachment_image_html( $attach_id , "large" );
+
+                                                if ( ! $img ) {
+                                                    $img = array();
+                                                    $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+                                                }
+
+                                                ?>
+
+                                                <div class="item">
+                                                    <?php echo $img['thumbnail'];?>
+                                                </div>
+
+                                                <?php
+
+                                            }
+                                        }
+                                        ?>
+
                                     </div>
                                 </div>
                             </div>
 
                             <div class="single-product-nav-slider">
                                 <div class="slider-wrap">
-                                    <div class="carousel"> 
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Denon-HEOS-1.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/OORT-2.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Triby-1.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/Aether-Cone.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/allure-eversense.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2016/05/click-grow-1.jpg">
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://iott.ir/wp-content/uploads/2017/07/Fred-One-Touch-Smart-Home-Mirror-400x358.jpg">
-                                        </div>
+                                    <div class="carousel">
+
+                                        <?php
+                                        if( !empty( $product_gallery ) ) {
+                                            foreach ($product_gallery AS $attach_id ) {
+
+                                                $img = get_sed_attachment_image_html( $attach_id , "thumbnail" );
+
+                                                if ( ! $img ) {
+                                                    $img = array();
+                                                    $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+                                                }
+
+                                                ?>
+
+                                                <div class="item">
+                                                    <?php echo $img['thumbnail'];?>
+                                                </div>
+
+                                                <?php
+
+                                            }
+                                        }
+                                        ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -129,9 +148,21 @@ get_header(); ?>
                 <section class="productSections relatedProducts">
                     <h4 class="sectionTitle"><span>محصولات مرتبط</span></h4>
 
+                    <?php
+                    $related_products = (array)iott_get_field( 'related_products' );
+
+                    ?>
+
                     <div class="slider-wrap">
-                        <div class="carousel"> <!-- "contain": true, "wrapAround": true, -->
-                            <?php $args = array('post_type' => 'product', 'showposts' => 18, 'tax_query' => array(array('taxonomy' => 'product_category', 'terms' => $term, 'field' => 'term_id'))); ?>
+                        <div class="carousel">
+                            <?php
+                            $args = array(
+                                'post_type' => 'product',
+                                //'showposts' => 18,
+                                'post__in'  => $related_products,
+                                'orderby'   => 'post__in'
+                            );
+                            ?>
                             <?php query_posts($args); while (have_posts()) : the_post(); ?>
                             <div class="item">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -153,9 +184,19 @@ get_header(); ?>
                 <section class="productSections selectedProducts">
                     <h4 class="sectionTitle"><span>محصولات پیشنهادی</span></h4>
 
+                    <?php
+                    $suggestion_products = (array)iott_get_field( 'suggestion_products' );
+
+                    $args = array(
+                        'post_type' => 'product',
+                        //'showposts' => 18,
+                        'post__in'  => $suggestion_products,
+                        'orderby'   => 'post__in'
+                    );
+                    ?>
                     <div class="slider-wrap">
                         <div class="carousel" data-flickity='{"percentPosition": false, "rightToLeft": true, "cellAlign": "right", "autoPlay": 15000, "groupCells": true }'> <!-- "contain": true, "wrapAround": true, -->
-                            <?php query_posts("post_type=product&showposts=18&orderby=rand"); while (have_posts()) : the_post(); ?>
+                            <?php query_posts( $args ); while (have_posts()) : the_post(); ?>
                             <div class="item">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                     <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
@@ -172,6 +213,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </section>
+
             </section>
         </main><!-- #main -->
     </div><!-- #primary -->

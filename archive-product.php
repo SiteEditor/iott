@@ -57,7 +57,7 @@
                             <div class="col-md-12 col-lg-6">
                                 <form method="get" class="form-inline">
                                     <div class="form-group">
-                                        <select name="productSortBy" onchange="onchangeSelect(this, 'orderby');">
+                                        <select class="iott-change-sort-select" name="productSortBy" data-value="orderby">
                                             <option value="data_desc" <?php if ($_GET['orderby'] == "data_desc") { echo "selected"; } ?>>تاریخ: نزولی</option>
                                             <option value="date_asc" <?php if ($_GET['orderby'] == "date_asc") { echo "selected"; } ?>>تاریخ: صعولی</option>
                                             <option value="title_asc" <?php if ($_GET['orderby'] == "title_asc") { echo "selected"; } ?>>بر اساس حروف الفبا: صعودی</option>
@@ -66,7 +66,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <select name="productCount" onchange="onchangeSelect(this, 'postperpage');">
+                                        <select class="iott-change-sort-select" name="productCount" data-value="postperpage">
                                             <option value="12" <?php if ($_GET['postperpage'] == "12") { echo "selected"; } ?>>نمایش در هر صفحه: ۱۲</option>
                                             <option value="24" <?php if ($_GET['postperpage'] == "24") { echo "selected"; } ?>>نمایش در هر صفحه: ۲۴</option>
                                             <option value="48" <?php if ($_GET['postperpage'] == "48") { echo "selected"; } ?>>نمایش در هر صفحه: ۴۸</option>
