@@ -93,7 +93,7 @@ get_header(); ?>
                                 <h3>
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                         <span><?php the_title(); ?></span>
-                                        <small><?php the_field('subtitle'); ?></small>
+                                        <small><?php iott_the_field('subtitle'); ?></small>
                                     </a>
                                 </h3>
 
@@ -112,9 +112,9 @@ get_header(); ?>
                                     <?php echo do_shortcode("[apss_share]"); ?>
                                 </div>
 
-                                <?php if (get_field('link_video')) { ?>
+                                <?php if (iott_get_field('link_video')) { ?>
                                 <div class="watchVideo">
-                                    <a href="<?php the_field('link_video'); ?>" class="fancybox" data-fancybox-type="iframe">مشاهده ویدیو</a>
+                                    <a href="<?php iott_the_field('link_video'); ?>" class="fancybox" data-fancybox-type="iframe">مشاهده ویدیو</a>
                                 </div>
                                 <?php } ?>
                             </section>
@@ -140,7 +140,7 @@ get_header(); ?>
                                     <?php endif; ?>
 
                                     <div class="caption">
-                                        <h5><?php the_title(); ?><hr class="little-separator" /><span><?php the_field('subtitle'); ?></span></h5>
+                                        <h5><?php the_title(); ?><hr class="little-separator" /><span><?php iott_the_field('subtitle'); ?></span></h5>
                                         <p><?php the_excerpt(); ?></p>
                                     </div>
                                 </a>
@@ -163,7 +163,7 @@ get_header(); ?>
                                     <?php endif; ?>
 
                                     <div class="caption">
-                                        <h5><?php the_title(); ?><hr class="little-separator" /><span><?php the_field('subtitle'); ?></span></h5>
+                                        <h5><?php the_title(); ?><hr class="little-separator" /><span><?php iott_the_field('subtitle'); ?></span></h5>
                                         <p><?php the_excerpt(); ?></p>
                                     </div>
                                 </a>

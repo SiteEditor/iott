@@ -1,5 +1,5 @@
 <div class="item">
-    <a href="<?php the_field('customer_link_url'); ?>" title="<?php the_title(); ?>">
+    <a href="<?php iott_the_field('customer_link_url'); ?>" title="<?php the_title(); ?>">
         <?php
 
         $attachment_id   = get_post_thumbnail_id();

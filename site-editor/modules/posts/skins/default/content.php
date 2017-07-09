@@ -27,7 +27,7 @@
 	        ?>
 
         <div class="caption">
-            <h5><?php the_title(); ?><hr class="little-separator" /><span><?php the_field('sec_title'); ?></span></h5>
+            <h5><?php the_title(); ?><hr class="little-separator" /><span><?php iott_the_field('subtitle'); ?></span></h5>
         </div>
     </a>
 </div>

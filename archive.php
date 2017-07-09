@@ -64,7 +64,7 @@ get_header(); ?>
 
                     <?php if (($i % 2) == 0) { ?>
 
-                        <?php if (get_field('show_thumbnail')) { ?>
+                        <?php if (iott_get_field('show_thumbnail')) { ?>
 
                         <div class="col-lg-12">
                             <header class="entry-header">
@@ -79,10 +79,10 @@ get_header(); ?>
                             <section class="entry-content">
                                 <p class="excerpt"><?php the_excerpt(); ?></p>
 
-                                <?php if (get_field('advertise_image') != null) { ?>
+                                <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                                 <div class="sponsor">
                                     <h6>Sponsored By:</h6>
-                                    <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                    <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                                 </div>
                                 <?php } ?>
 
@@ -117,10 +117,10 @@ get_header(); ?>
                             <section class="entry-content">
                                 <div class="excerpt"><?php the_excerpt(); ?></div>
 
-                                <?php if (get_field('advertise_image') != null) { ?>
+                                <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                                 <div class="sponsor">
                                     <h6>Sponsored By:</h6>
-                                    <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                    <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                                 </div>
                                 <?php } ?>
 
@@ -134,7 +134,7 @@ get_header(); ?>
 
                     <?php } else { ?>
 
-                        <?php if (get_field('show_thumbnail')) { ?>
+                        <?php if (iott_get_field('show_thumbnail')) { ?>
                         <div class="col-lg-12">
                             <header class="entry-header">
                                 <div class="category">
@@ -148,10 +148,12 @@ get_header(); ?>
                             <section class="entry-content">
                                 <p class="excerpt"><?php the_excerpt(); ?></p>
 
+                                <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                                 <div class="sponsor">
                                     <h6>Sponsored By:</h6>
-                                    <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                    <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                                 </div>
+                                <?php } ?>
 
                                 <div class="more-info">
                                     <a href="<?php the_permalink(); ?>" title="اطلاعات بیشتر در رابطه با <?php the_title(); ?>">اطلاعات بیشتر</a>
@@ -173,10 +175,12 @@ get_header(); ?>
                             <section class="entry-content">
                                 <div class="excerpt"><?php the_excerpt(); ?></div>
 
+                                <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                                 <div class="sponsor">
                                     <h6>Sponsored By:</h6>
-                                    <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                    <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                                 </div>
+                                <?php } ?>
 
                                 <div class="more-info">
                                     <a href="<?php the_permalink(); ?>" title="اطلاعات بیشتر در رابطه با <?php the_title(); ?>">اطلاعات بیشتر</a>

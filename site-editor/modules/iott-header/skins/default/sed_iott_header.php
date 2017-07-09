@@ -86,7 +86,7 @@
                                 <div class="col-sm-7">
                                     <div class="entry">
                                         <h5><?php the_title(); ?></h5>
-                                        <h6><?php the_field('subtitle'); ?></h6>
+                                        <h6><?php iott_the_field('subtitle'); ?></h6>
                                         <hr class="little-separator"/>
                                         <p><?php the_excerpt(); ?></p>
 

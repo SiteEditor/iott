@@ -21,7 +21,7 @@ get_header(); ?>
                 <?php if ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <?php if ('' !== get_the_post_thumbnail() && !get_field('show_thumbnail')) : ?>
+                        <?php if ('' !== get_the_post_thumbnail() && !iott_get_field('show_thumbnail')) : ?>
                             <div class="post-thumbnail">
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_post_thumbnail('single'); ?>
@@ -40,10 +40,10 @@ get_header(); ?>
                         </header>
 
                         <section class="entry-content">
-                            <?php if (get_field('advertise_image') != null) { ?>
+                            <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                             <div class="sponsor">
                                 <h6>Sponsored By:</h6>
-                                <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                             </div>
                             <?php } ?>
 

@@ -212,5 +212,28 @@ function get_terms_string($id, $tax, $before = null, $after = null) {
 }
 
 
+function iott_get_field( $key , $post_id = 0 ){
+
+    global $post;
+
+    $post_id = (int)$post_id;
+
+    if( $post_id == 0 && $post ){
+
+        $post_id = get_the_ID();
+
+    }
+
+    return get_post_meta( $post_id , $key , true );
+
+}
+
+function iott_the_field( $key , $post_id = 0 ){
+
+    echo iott_get_field( $key , $post_id );
+
+}
+
+
 
 

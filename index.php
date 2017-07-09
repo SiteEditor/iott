@@ -76,10 +76,10 @@ get_header(); ?>
                         <section class="entry-content">
                             <div class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></div>
 
-                            <?php if (get_field('advertise_image') != null) { ?>
+                            <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                             <div class="sponsor">
                                 <h6>Sponsored By:</h6>
-                                <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                             </div>
                             <?php } ?>
 
@@ -104,10 +104,12 @@ get_header(); ?>
                         <section class="entry-content">
                             <div class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></div>
 
+                            <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                             <div class="sponsor">
                                 <h6>Sponsored By:</h6>
-                                <a href="<?php the_field('advertise_link'); ?>" target="_blank"><img src="<?php the_field('advertise_image'); ?>" alt=""></a>
+                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
                             </div>
+                            <?php } ?>
 
                             <div class="more-info">
                                 <a href="<?php the_permalink(); ?>" title="اطلاعات بیشتر در رابطه با <?php the_title(); ?>">اطلاعات بیشتر</a>

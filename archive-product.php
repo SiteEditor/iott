@@ -108,7 +108,7 @@
                                 <header class="entry-header entry-header--archive">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                         <span><?php the_title(); ?></span>
-                                        <small><?php the_field('subtitle'); ?></small>
+                                        <small><?php iott_the_field('subtitle'); ?></small>
                                     </a>
                                 </header>
                             </article>
