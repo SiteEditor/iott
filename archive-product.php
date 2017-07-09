@@ -43,7 +43,7 @@
 
         <?php endif; ?>
 
-        <div id="primary" class="content-area">
+        <div id="primary" class="content-area blog-content-area">
             <main id="main" class="site-main" role="main">
                 <section class="content">
                     <div class="row">
@@ -88,7 +88,19 @@
                                 <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
                                     <div class="post-thumbnail">
                                         <a href="<?php the_permalink(); ?>">
-                                            <?php the_post_thumbnail('s1x1'); ?>
+                                            <?php
+
+                                                $attachment_id   = get_post_thumbnail_id();
+
+                                                $img = get_sed_attachment_image_html( $attachment_id , "" , "400X400" );
+
+                                            ?>
+                                            <?php 
+                                                if ( $img ) {
+                                                    echo $img['thumbnail'];
+                                                }
+                                            ?>
+                                            <?php //the_post_thumbnail('s1x1'); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
