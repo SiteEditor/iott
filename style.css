@@ -1844,6 +1844,7 @@ h2.widget-title ,
 .timeline .day .date {
     text-align: center
 }
+
 .timeline .day .date span {
     background: #118bcf;
     border-radius: 50%;
@@ -1884,6 +1885,7 @@ h2.widget-title ,
     width: 2px;
     transition: all .15s ease-out
 }
+
 .timeline .hover .hover-desc {
     text-align: right;
     direction: rtl
@@ -1912,14 +1914,16 @@ h2.widget-title ,
     max-height: 63px;
     overflow: hidden
 }
+
 .timeline .hover .hover-desc .title {
-    border: 3px solid #118bcf;
+    border: 2px solid #118bcf;
     border-radius: 24px;
     padding: 9px 20px 10px 10px;
     height: 48px;
     opacity: 0;
-    transition: opacity .15s ease-out .2s
+    transition: opacity .15s ease-out .2s;
 }
+
 .timeline .hover .hover-desc .title a {
     color: #333
 }
@@ -1930,6 +1934,7 @@ h2.widget-title ,
     text-overflow: ellipsis;
     white-space: nowrap
 }
+
 .timeline .hover .hover-desc .title .day-num {
     border: 2px solid #118bcf;
     border-radius: 50%;
@@ -2108,6 +2113,97 @@ h2.widget-title ,
 
 
 
+/******************* Archive Timeline *****************/
+
+.timeline-content-area .date-wrap {
+	margin: 0;
+}
+
+.timeline-content-area .date-wrap > * {
+    float: left;
+}
+
+.rtl .timeline-content-area .date-wrap > * {
+    float: right;
+}
+
+.timeline-content-area .date-wrap .date span {
+    background: #118bcf;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    display: inline-block;
+    line-height: 38px;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    margin: 2px 0;
+}
+
+.timeline-content-area .date-wrap .line {
+    background: #118bcf;
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 2px;
+    transition: all .15s ease-out;
+    margin: 20px 0;
+}
+
+.timeline-content-area .date-wrap .full-date-wrap {
+    border: 2px solid #118bcf;
+    border-radius: 24px;
+    padding: 0;
+    height: 42px;
+    min-width: 150px;
+    opacity: 1;
+    display: inline-block;
+}
+
+.timeline-content-area .date-wrap .full-date-wrap .day-num {
+    border: 2px solid #118bcf;
+    border-radius: 50%;
+    display: block;
+    float: right;
+    margin: 3px;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+
+.timeline-content-area .date-wrap .full-date-wrap .full-date {
+	padding: 0 10px;
+	line-height: 38px;
+}
+
+.timeline-content-area .content {
+    padding: 30px 60px 40px;
+    margin: -5px 18px;
+    border-left: 2px solid #ccc;
+}
+
+.rtl .timeline-content-area .content {
+    border-left: 0 none;
+    border-right: 2px solid #ccc;
+}
+
+.timeline-content-area .content p {
+    margin: 0;
+}
+
+.timeline-content-area .content .title h3 {
+    color: #08a;
+} 
+
+.timeline-content-area .content .image {
+    height: 64px;
+}
+
+.timeline-content-area .content .image img {
+    max-height: 100%;
+    width: auto;
+}
 
 
 /******************* Posts *****************/
@@ -2122,12 +2218,12 @@ h2.widget-title ,
     margin: 0;
     padding: 0;
 }
-.blog-content-area .content .armanam_breadcrumbs {
+.armanam_breadcrumbs {
     font-size: 12px;
     color: #08a
 }
-.blog-content-area .content .armanam_breadcrumbs .delimiter,
-.blog-content-area .content .armanam_breadcrumbs a {
+.armanam_breadcrumbs .delimiter,
+.armanam_breadcrumbs a {
     color: #959597
 }
 .blog-content-area .content__header {
@@ -2147,7 +2243,7 @@ h2.widget-title ,
 .blog-content-area .content .post:nth-last-child(2) {
     margin-bottom: 15px
 }
-.blog-content-area .content .post hr.little-separator {
+hr.little-separator {
     border-top: 2px solid #08a;
     width: 50px;
     height: 2px;
