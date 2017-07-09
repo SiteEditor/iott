@@ -19,9 +19,9 @@
 
             ?>
 
-            <div class="container">
+            <div class="sed-row-doxed">
                 <div class="slider-wrap">
-                    <div class="days owl-carousel owl-theme">
+                    <div class="days carousel">
 
                         <?php
                         // Start the Loop.
