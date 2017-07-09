@@ -73,7 +73,7 @@ get_header(); ?>
                     <h4 class="sectionTitle"><span>محصولات مرتبط</span></h4>
 
                     <div class="slider-wrap">
-                        <div class="carousel" data-flickity='{"percentPosition": false, "rightToLeft": true, "cellAlign": "right", "autoPlay": 15000, "groupCells": true }'> <!-- "contain": true, "wrapAround": true, -->
+                        <div class="carousel"> <!-- "contain": true, "wrapAround": true, -->
                             <?php $args = array('post_type' => 'product', 'showposts' => 18, 'tax_query' => array(array('taxonomy' => 'product_category', 'terms' => $term, 'field' => 'term_id'))); ?>
                             <?php query_posts($args); while (have_posts()) : the_post(); ?>
                             <div class="item">

@@ -2456,17 +2456,27 @@ border: 0 none;
 .productSections .flickity-prev-next-button {
     display: none
 }
+
+.productSections .slick-slider {
+    margin: 0;
+}
+
+.productSections .slick-list {
+    margin-left: -10px;
+}
+
 .productSections .carousel .item {
     border: 1px solid #8c8c8c;
     margin-left: 10px;
     width: 160px;
     height: 160px;
-    overflow: hidden
+    overflow: hidden;
+    position: relative;
 }
 .productSections .carousel .item img {
     display: block;
-    width: auto;
-    height: 100%
+    width: 100%;
+    height: auto;
 }
 .productSections .carousel .item .caption {
     background: rgba(255, 255, 255, .8);
