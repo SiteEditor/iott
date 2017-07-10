@@ -183,7 +183,7 @@
             rtl                 : $rtl,
             //swipe               : true ,
             touchMove           : true ,
-            infinite            : true, 
+            infinite            : false, 
             prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
             nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
             responsive: [{
@@ -228,7 +228,7 @@
             rtl                 : $rtl,
             //swipe               : true ,
             touchMove           : true ,
-            infinite            : true, 
+            infinite            : false, 
             prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
             nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
             responsive: [{
@@ -272,7 +272,7 @@
             rtl                 : $rtl,
             //swipe               : true ,
             touchMove           : true ,
-            infinite            : true, 
+            infinite            : false, 
             prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
             nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
             responsive: [{
@@ -316,7 +316,7 @@
             rtl                 : $rtl,
             //swipe               : true ,
             touchMove           : true ,
-            infinite            : true, 
+            infinite            : false, 
             prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
             nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
             responsive: [{
