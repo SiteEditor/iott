@@ -46,9 +46,11 @@ class Sed_Featured_Post_Widget extends WP_Widget {
 		if ( ! $number ) {
 			$number = 5;
 		}
-		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
-		$post_type = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'post';
-		$style 	   = isset( $instance['style'] ) ? esc_attr( $instance['style'] ) : 'default';
+		$show_date 		 = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
+		$post_type 		 = isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'post';
+		$style 	   		 = isset( $instance['style'] ) ? esc_attr( $instance['style'] ) : 'default';
+		$link_to_archive = isset( $instance['link_to_archive'] ) ? $instance['link_to_archive'] : false;
+		$replace_title 	 = isset( $instance['style'] ) ? esc_attr( $instance['replace_title'] ) : '';
 
 		$nsfp_query = new WP_Query( apply_filters( 'nsfp_featured_posts_widget_args', array(
 			'posts_per_page'      => $number,
@@ -81,11 +83,13 @@ class Sed_Featured_Post_Widget extends WP_Widget {
 
 		$instance = $old_instance;
 
-		$instance['title']     	= sanitize_text_field( $new_instance['title'] );
-		$instance['number']    	= absint( $new_instance['number'] );
-		$instance['show_date'] 	= isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
-		$instance['post_type'] 	= sanitize_text_field( $new_instance['post_type'] );
-		$instance['style'] 		= sanitize_text_field( $new_instance['style'] );
+		$instance['title']     			= sanitize_text_field( $new_instance['title'] );
+		$instance['number']    			= absint( $new_instance['number'] );
+		$instance['show_date'] 			= isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
+		$instance['post_type'] 			= sanitize_text_field( $new_instance['post_type'] );
+		$instance['style'] 				= sanitize_text_field( $new_instance['style'] );
+		$instance['link_to_archive'] 	= isset( $new_instance['link_to_archive'] ) ? (bool) $new_instance['link_to_archive'] : false;
+		$instance['replace_title'] 		= sanitize_text_field( $new_instance['replace_title'] );
 
 		return $instance;
 
@@ -99,11 +103,14 @@ class Sed_Featured_Post_Widget extends WP_Widget {
 	 * @param array $instance Current settings.
 	 */
 	function form( $instance ) {
-		$title     	= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number    	= isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-		$show_date 	= isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
-		$post_type 	= isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'post';
-		$style 		= isset( $instance['style'] ) ? esc_attr( $instance['style'] ) : 'default';
+		$title     			= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$number    			= isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
+		$show_date 			= isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
+		$post_type 			= isset( $instance['post_type'] ) ? esc_attr( $instance['post_type'] ) : 'post';
+		$style 				= isset( $instance['style'] ) ? esc_attr( $instance['style'] ) : 'default';
+		$link_to_archive 	= isset( $instance['link_to_archive'] ) ? $instance['link_to_archive'] : false;
+		$replace_title 	 	= isset( $instance['style'] ) ? esc_attr( $instance['replace_title'] ) : '';
+
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'ns-featured-posts' ); ?></label>
@@ -139,6 +146,11 @@ class Sed_Featured_Post_Widget extends WP_Widget {
 		</p>
 
 		<p>
+			<input class="checkbox" type="checkbox" <?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'ns-featured-posts' ); ?></label>
+		</p>
+
+		<p>
 			<label for="<?php echo $this->get_field_id( 'style' ); ?>"><?php _e( 'Select Style:', 'ns-featured-posts' ) ?></label>
 			<select id="<?php echo $this->get_field_id( 'style' ); ?>" name="<?php echo $this->get_field_name( 'style' ); ?>">
 				<option value="default" <?php selected( $style, 'default' ) ?>><?php _e( 'Default', 'ns-featured-posts' ) ?></option>
@@ -149,9 +161,15 @@ class Sed_Featured_Post_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<input class="checkbox" type="checkbox" <?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'ns-featured-posts' ); ?></label>
+			<input class="checkbox" type="checkbox" <?php checked( $link_to_archive ); ?> id="<?php echo $this->get_field_id( 'link_to_archive' ); ?>" name="<?php echo $this->get_field_name( 'link_to_archive' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'link_to_archive' ); ?>"><?php _e( 'Link To Archive? "for style 2 and style 3"', 'ns-featured-posts' ); ?></label>
 		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'replace_title' ); ?>"><?php _e( 'Replace Title:', 'ns-featured-posts' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'replace_title' ); ?>" name="<?php echo $this->get_field_name( 'replace_title' ); ?>" type="text" value="<?php echo $replace_title; ?>" />
+		</p>
+
 		<?php
 	}
 }
