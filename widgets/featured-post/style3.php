@@ -20,3 +20,13 @@ if ( $nsfp_query->have_posts() ) : ?>
     <?php wp_reset_postdata(); ?>
 
 <?php endif; ?>
+
+<div class="banners">
+
+    <a class="image">
+        <img src="http://stars.starsideas.org/wp-content/uploads/2015/06/1-image1.jpg" alt="">
+    </a>
+  
+    <a class="title text-center">بایگانی ویدیوها</a>
+    
+</div>

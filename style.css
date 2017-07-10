@@ -28,40 +28,52 @@ table.sed-cols-table.sed-main-content-layout-module > tbody > tr > th {
     border: 1px solid #9e9e9e !important;
 }*/
 
-table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child {
-    border-left: 1px solid #9e9e9e !important;
-}
-
-.rtl table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child {
-    border-left: 0 none !important;
-    border-right: 1px solid #9e9e9e !important;
-}
-
-table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:after,
-table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:before {
-    content: "";
-    width: 3000px;
-    height: 0;
-    display: block;
-    border-top: 1px solid #9e9e9e;
-    position: absolute;
-    left: 50%;
-    margin-left: -1500px;
-}
-
-table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:before {
-    top: 0;
-}
-
-table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:after {
-    bottom: 0;
-}
 
 .slick-dots , .ltr, .timeline, .wp-pagenavi {
     direction: ltr;
 }
 
+@media (max-width: 768px) {
+	.sed-cols-table.sed-main-content-layout-module {
+		direction: ltr;
+	}
+
+	.sed-main-content-layout-column { 
+		direction: rtl;
+	}
+}	
+
 @media (min-width: 768px) {
+
+	table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child {
+	    border-left: 1px solid #9e9e9e !important;
+	}
+
+	.rtl table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child {
+	    border-left: 0 none !important;
+	    border-right: 1px solid #9e9e9e !important;
+	}
+
+	table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:after,
+	table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:before {
+	    content: "";
+	    width: 3000px;
+	    height: 0;
+	    display: block;
+	    border-top: 1px solid #9e9e9e;
+	    position: absolute;
+	    left: 50%;
+	    margin-left: -1500px;
+	}
+
+	table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:before {
+	    top: 0;
+	}
+
+	table.sed-cols-table.sed-main-content-layout-module > tbody > tr > td:last-child:after {
+	    bottom: 0;
+	}
+
 	.form-inline .form-group {
 	    display: inline-block; 
 	    margin-bottom: 0;
@@ -2854,6 +2866,155 @@ border: 0 none;
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* ------- Html-6 ------- */
+
+.img-lists-element {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.img-lists-item {
+	padding: 10px 0;
+	margin: 0 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.img-lists-item:last-child {
+    margin-bottom: 0;
+    border: 0 none;
+}
+
+.img-lists-thumbnail,
+.img-lists-content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.img-lists-thumbnail {
+    width: 30%;
+    padding: 0 5px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.img-lists-thumbnail img {
+    display: block;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.img-lists-content {
+    width: 70%;
+    margin-left: -4px;
+    padding: 0 5px;
+}
+
+.img-lists-content .img-lists-text p {
+    margin: 0;
+}
+
+.img-lists-element h2.widget-title {
+    background: #eaeaea;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.img-lists-element  .img-lists-element-inner {
+    background-color: #f4f4f4;
+}
+
+
+/**********************/
+.banners {
+    padding: 0;
+}
+.banners video {
+    display: block;
+    width: 100%
+}
+.banners a {
+    display: block;
+    width: 100%;
+    overflow: hidden
+}
+.banners a img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+@media (max-width: 992px) {
+    .banners a {
+        margin-bottom: 15px
+    }
+    .banners a img {
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+.banners a:hover {
+    opacity: .8
+}
+.banners a.image {
+    position: relative;
+    cursor: pointer;
+}
+
+.banners a.title {
+    display: block;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.banners a.image span.play-icon {
+    background: url(images/9.png) center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin: -23px -23px 0 0;
+    width: 46px;
+    height: 46px;
+    cursor: pointer; 
+}
+
+
+/******************
+.sidebar .banners {
+    padding: 0
+}
+.sidebar .banners a img {
+    width: 100%;
+    height: auto
+}
+.widget__hedear h4 {
+    background: #eaeaea;
+    padding: 10px;
+    margin-bottom: 0
+}
+.widget ul {
+    padding: 5px 10px 10px;
+    margin-bottom: 0;
+    list-style: none
+}
+.widget ul li:not(:last-child) {
+    border-bottom: 1px solid #e9e9e9
+}
+.contactForm,
+.customers {
+    border-bottom: 1px solid #9e9e9e
+}
+.widget a {
+    color: #707070;
+    display: block;
+    padding: 5px 0
+}
+.widget a:hover {
+    color: #08a
+}
+.widget--hasList {
+    background: #f4f4f4
 }
 
 
