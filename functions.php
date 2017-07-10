@@ -298,3 +298,20 @@ function iott_custom_posttype_sort($query) {
 add_action('pre_get_posts', 'iott_custom_posttype_sort');
 
 
+function iott_register_widgets() {
+
+    if( class_exists('NS_Featured_Posts') ){
+
+        unregister_widget( 'NSFP_Featured_Post_Widget'   );
+
+        require_once( get_stylesheet_directory(). '/widgets/featured-post.php' );
+
+        register_widget( 'Sed_Featured_Post_Widget' );
+
+    }
+
+}
+
+add_action( 'widgets_init',  'iott_register_widgets' );
+
+

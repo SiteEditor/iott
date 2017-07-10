@@ -67,6 +67,8 @@
 
                                         <?php
 
+                                        $attachment_id = get_post_thumbnail_id( get_the_ID() );
+
                                         $img = get_sed_attachment_image_html( $attachment_id , "thumbnail" );
 
                                         if ( ! $img ) {
