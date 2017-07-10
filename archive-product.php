@@ -43,7 +43,7 @@
 
         <?php endif; ?>
 
-        <div id="primary" class="content-area blog-content-area">
+        <div id="primary" class="content-area blog-content-area archive-custom-post-type">
             <main id="main" class="site-main" role="main">
                 <section class="content">
                     <div class="row">
@@ -84,7 +84,7 @@
                     <div class="row">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <div class="col-sm-6 col-md-4">
-                            <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+                            <article id="post-<?php the_ID(); ?>" <?php post_class('post custom-post-item'); ?>>
                                 <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
                                     <div class="post-thumbnail">
                                         <a href="<?php the_permalink(); ?>">

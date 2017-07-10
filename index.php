@@ -44,7 +44,7 @@ get_header(); ?>
 
     ?>
 
-    <div id="primary" class="content-area blog-content-area">
+    <div id="primary" class="content-area sed-blog-content blog-content-area">
         <main id="main" class="site-main" role="main">
 
             <section class="content">

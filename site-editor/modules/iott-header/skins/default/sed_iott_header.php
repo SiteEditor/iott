@@ -69,7 +69,7 @@
 
                                         $attachment_id = get_post_thumbnail_id( get_the_ID() );
 
-                                        $img = get_sed_attachment_image_html( $attachment_id , "thumbnail" );
+                                        $img = get_sed_attachment_image_html( $attachment_id , "" , "320X240" );
 
                                         if ( ! $img ) {
                                             $img = array();
@@ -90,7 +90,13 @@
                                         <h5><?php the_title(); ?></h5>
                                         <h6><?php iott_the_field('subtitle'); ?></h6>
                                         <hr class="little-separator"/>
-                                        <p><?php the_excerpt(); ?></p>
+                                        <p>
+                                        <?php 
+                                        $excerpt = mb_substr( get_the_excerpt(), 0, 150 );
+                                        
+                                        echo $excerpt; 
+                                        ?>
+                                        </p>
 
                                     </div>
                                 </div>
@@ -112,36 +118,44 @@
 
     <header id="header">
 
-        <div class="sed-row-boxed">
 
-            <div class="logo">
-                <h1>
-                    <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>">
-                        <?php
-                        if( !empty( $site_logo ) ) {
-
-                            $img = get_sed_attachment_image_html( $site_logo, 'full' );
-
-                            if ( $img ) {
-                                echo $img['thumbnail'];
+        <div class="iott-h-menu-container">
+            
+            <div class="sed-row-boxed">
+                
+                <div class="logo">
+                    <h1>
+                        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>">
+                            <?php
+                            if( !empty( $site_logo ) ) {
+    
+                                $img = get_sed_attachment_image_html( $site_logo, 'full' );
+    
+                                if ( $img ) {
+                                    echo $img['thumbnail'];
+                                }
                             }
-                        }
-                        ?>
-                        <?php bloginfo('title'); ?>
-                    </a>
-                </h1>
-                <h2><?php bloginfo('description'); ?></h2>
+                            ?>
+                            <?php bloginfo('title'); ?>
+                        </a>
+                    </h1>
+                    <h2><?php bloginfo('description'); ?></h2>
+                </div>
+    
+                <div class="menu">
+                    <button class="toggle-navigation">
+                        <span class="toggle-menu-hamburger-open"></span>
+                        <span class="toggle-menu-hamburger-close"></span>
+                    </button>
+                </div>
+        
             </div>
+        </div>
 
-            <div class="menu">
-                <button class="toggle-navigation">
-                    <span class="toggle-menu-hamburger-open"></span>
-                    <span class="toggle-menu-hamburger-close"></span>
-                </button>
-            </div>
+        <div class="clearfix"></div>
 
-            <div class="clearfix"></div>
-
+        <div class="sed-row-boxed">
+            
             <div class="socials">
                 <ul class="list-unstyled">
                     <?php if( !empty( $social_instagram ) ) { ?><li><a href="<?php esc_attr( esc_url( $social_instagram ) ); ?>" title="<?php echo __("Instagram" , "iott" );?>" class="instagram"></a></li><?php } ?>

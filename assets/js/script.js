@@ -167,6 +167,25 @@
         },
     });
 
+    var scrollbarContainer_2 =  $(".menu-container .left-panel"),
+        scrollbarHeight_2 =  $( window ).height();  
+
+    scrollbarContainer_2.css({
+        height : scrollbarHeight_2 + 'px', 
+    });
+    
+
+    scrollbarContainer_2.mCustomScrollbar({
+        autoHideScrollbar:true ,
+        advanced:{
+            updateOnBrowserResize:true, /*update scrollbars on browser resize (for layouts based on percentages): boolean*/
+            updateOnContentResize:true,
+        },
+        scrollButtons:{
+            enable:true
+        },
+    });
+
 
 
     var $rtl = ( $("body").hasClass("rtl-body") ) ? true : false;

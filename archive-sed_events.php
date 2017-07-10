@@ -55,94 +55,98 @@ get_header(); ?>
 
     <?php endif; ?>
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area blog-content-area">
 
         <main id="main" class="site-main" role="main">
+            
+            <section class="content">
 
-            <div class="timeline-content-area <?php iott_the_field('event_color'); ?>">
-
-                <?php
-
-                $i = 0;
-
-                $current_day = '';
-
-                $current_month = '';
-
-                if ( have_posts() ) :
-
-                    while ( have_posts() ) : the_post();
-
-                        $event_logo_id = iott_get_field('event_image');
-
-                        $img = get_sed_attachment_image_html( $event_logo_id , "medium" );
-
-                        if ( ! $img ) {
-                            $img = array();
-                            $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
-                        }
-
-                        $new_day = iott_get_field('event_day');
-
-                        $new_month = iott_get_field('event_month');
-
-                        $year = iott_get_field('event_year');
-
-                        $year = !$year ? '' : $year;
-
-                        if( $new_day && ( $new_day != $current_day || ( $new_month && $new_month != $current_month ) ) ){
-
-                            $current_day = $new_day;
-
-                            $current_month = $new_month;
-
-
-                    ?>
-                            <div class="date-wrap clearfix">
-                                <div class="date"><span><?php echo $new_day;?></span></div>
-                                <span class="line"></span>
-                                <div class="full-date-wrap">
-                                    <span class="day-num"><?php echo $new_day;?></span>
-                                    <span class="full-date"><?php echo $new_month . " " . $year;?></span>
-                                </div>
-                            </div>
-
-                        <?php } ?>
-
-                        <div id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
-
-                            <div class="content-desc">
-
-                                <div class="title">
-                                    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-                                </div>
-
-                                <div class="image">
-                                    <?php echo $img['thumbnail'] ; ?>
-                                </div>
-
-                                <hr class="little-separator">
-
-                                <div class="text">
-                                    <div><?php the_excerpt(); ?></div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                <div class="timeline-content-area <?php iott_the_field('event_color'); ?>">
+    
                     <?php
-
-                    $i++;
-
-                    endwhile;
-
-                    wp_pagenavi();
-
-                endif;
-                ?>
-
-            </div>
+    
+                    $i = 0;
+    
+                    $current_day = '';
+    
+                    $current_month = '';
+    
+                    if ( have_posts() ) :
+    
+                        while ( have_posts() ) : the_post();
+    
+                            $event_logo_id = iott_get_field('event_image');
+    
+                            $img = get_sed_attachment_image_html( $event_logo_id , "medium" );
+    
+                            if ( ! $img ) {
+                                $img = array();
+                                $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+                            }
+    
+                            $new_day = iott_get_field('event_day');
+    
+                            $new_month = iott_get_field('event_month');
+    
+                            $year = iott_get_field('event_year');
+    
+                            $year = !$year ? '' : $year;
+    
+                            if( $new_day && ( $new_day != $current_day || ( $new_month && $new_month != $current_month ) ) ){
+    
+                                $current_day = $new_day;
+    
+                                $current_month = $new_month;
+    
+    
+                        ?>
+                                <div class="date-wrap clearfix">
+                                    <div class="date"><span><?php echo $new_day;?></span></div>
+                                    <span class="line"></span>
+                                    <div class="full-date-wrap">
+                                        <span class="day-num"><?php echo $new_day;?></span>
+                                        <span class="full-date"><?php echo $new_month . " " . $year;?></span>
+                                    </div>
+                                </div>
+    
+                            <?php } ?>
+    
+                            <div id="post-<?php the_ID(); ?>" <?php post_class('item-content'); ?>>
+    
+                                <div class="content-desc">
+    
+                                    <div class="title">
+                                        <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+                                    </div>
+    
+                                    <div class="image">
+                                        <?php echo $img['thumbnail'] ; ?>
+                                    </div>
+    
+                                    <hr class="little-separator">
+    
+                                    <div class="text">
+                                        <div><?php the_excerpt(); ?></div>
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+    
+                        <?php
+    
+                        $i++;
+    
+                        endwhile;
+    
+                        wp_pagenavi();
+    
+                    endif;
+                    ?>
+    
+                </div>
+            
+            </section>
 
         </main>
 

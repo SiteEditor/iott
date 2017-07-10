@@ -28,7 +28,21 @@
                         ?>
                     </a>
                     <div class="img-lists-content">
-                        <a class="img-lists-heading" href="<?php the_permalink(); ?>"> <?php get_the_title() ? the_title() : the_ID(); ?> </a>
+                        
+                        <a class="img-lists-heading" href="<?php the_permalink(); ?>"> 
+                        <?php 
+                        
+                        $title = get_the_title();
+                          
+                        if( strlen($title) > 35 ){                                         
+                            $title = mb_substr( $title , 0, 35 )."...";
+                        }
+                        
+                        echo $title; 
+                        
+                        ?> 
+                        </a>
+                        
                         <?php if ( $show_date ) : ?>
                             <div class="img-lists-text"><span class="post-date"><?php echo get_the_date(); ?></span></div>
                         <?php endif; ?>
