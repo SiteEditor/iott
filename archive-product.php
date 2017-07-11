@@ -58,18 +58,24 @@
                                 <form method="get" class="form-inline">
                                     <div class="form-group">
                                         <select class="iott-change-sort-select" name="productSortBy" data-value="orderby">
-                                            <option value="data_desc" <?php if ($_GET['orderby'] == "data_desc") { echo "selected"; } ?>>تاریخ: نزولی</option>
-                                            <option value="date_asc" <?php if ($_GET['orderby'] == "date_asc") { echo "selected"; } ?>>تاریخ: صعولی</option>
-                                            <option value="title_asc" <?php if ($_GET['orderby'] == "title_asc") { echo "selected"; } ?>>بر اساس حروف الفبا: صعودی</option>
-                                            <option value="title_desc" <?php if ($_GET['orderby'] == "title_desc") { echo "selected"; } ?>>بر اساس حروف الفبا: نزولی</option>
+                                            <?php
+                                            $orderby = isset( $_GET['orderby'] ) ? $_GET['orderby'] : "data_desc";
+                                            ?>
+                                            <option value="data_desc" <?php if ( $orderby == "data_desc") { echo "selected"; } ?>>تاریخ: نزولی</option>
+                                            <option value="date_asc" <?php if ( $orderby == "date_asc") { echo "selected"; } ?>>تاریخ: صعولی</option>
+                                            <option value="title_asc" <?php if ( $orderby == "title_asc") { echo "selected"; } ?>>بر اساس حروف الفبا: صعودی</option>
+                                            <option value="title_desc" <?php if ( $orderby == "title_desc") { echo "selected"; } ?>>بر اساس حروف الفبا: نزولی</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <select class="iott-change-sort-select" name="productCount" data-value="postperpage">
-                                            <option value="12" <?php if ($_GET['postperpage'] == "12") { echo "selected"; } ?>>نمایش در هر صفحه: ۱۲</option>
-                                            <option value="24" <?php if ($_GET['postperpage'] == "24") { echo "selected"; } ?>>نمایش در هر صفحه: ۲۴</option>
-                                            <option value="48" <?php if ($_GET['postperpage'] == "48") { echo "selected"; } ?>>نمایش در هر صفحه: ۴۸</option>
+                                            <?php
+                                            $postperpage = isset( $_GET['postperpage'] ) ? $_GET['postperpage'] : 12;
+                                            ?>
+                                            <option value="12" <?php if ( $postperpage == "12" ) { echo "selected"; } ?>>نمایش در هر صفحه: ۱۲</option>
+                                            <option value="24" <?php if ( $postperpage == "24" ) { echo "selected"; } ?>>نمایش در هر صفحه: ۲۴</option>
+                                            <option value="48" <?php if ( $postperpage == "48" ) { echo "selected"; } ?>>نمایش در هر صفحه: ۴۸</option>
                                         </select>
                                     </div>
                                 </form>

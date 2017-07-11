@@ -50,7 +50,7 @@ get_header(); ?>
                                     <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                                     <div class="sponsor">
                                         <h6>Sponsored By:</h6>
-                                        <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
+                                        <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><?php the_sponsored_image( iott_get_field('advertise_image') ); ?></a>
                                     </div>
                                     <?php } ?>
 

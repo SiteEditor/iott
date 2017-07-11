@@ -51,6 +51,20 @@ get_header(); ?>
                 <?php $i = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
 
+                <?php
+
+                ob_start();
+
+                the_excerpt();
+
+                $excerpt = ob_get_clean();
+                  
+                if( strlen($excerpt) > 250 ){                                         
+                    $excerpt = mb_substr( $excerpt , 0, 250 )."...";
+                }
+                        
+                ?>
+
                 <?php if (($i % 2) == 0) { ?>
 
                     <div class="col-lg-6">
@@ -74,12 +88,12 @@ get_header(); ?>
                         </header>
 
                         <section class="entry-content">
-                            <div class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></div>
+                            <div class="excerpt" style="text-align:justify;"><?php echo $excerpt; ?></div>
 
                             <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                             <div class="sponsor">
                                 <h6>Sponsored By:</h6>
-                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
+                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><?php the_sponsored_image( iott_get_field('advertise_image') ); ?></a>
                             </div>
                             <?php } ?>
 
@@ -102,12 +116,12 @@ get_header(); ?>
                         </header>
 
                         <section class="entry-content">
-                            <div class="excerpt" style="text-align:justify;"><?php the_excerpt(); ?></div>
+                            <div class="excerpt" style="text-align:justify;"><?php echo $excerpt; ?></div>
 
                             <?php if ( !empty( iott_get_field('advertise_image') ) ) { ?>
                             <div class="sponsor">
                                 <h6>Sponsored By:</h6>
-                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><img src="<?php iott_the_field('advertise_image'); ?>" alt=""></a>
+                                <a href="<?php iott_the_field('advertise_link'); ?>" target="_blank"><?php the_sponsored_image( iott_get_field('advertise_image') ); ?></a>
                             </div>
                             <?php } ?>
 

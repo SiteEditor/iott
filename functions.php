@@ -235,26 +235,50 @@ function iott_the_field( $key , $post_id = 0 ){
 }
 
 
-// Have homepage & archive pages display different post counts
-// https://solopine.ticksy.com/article/3436/
-// http://www.dezzain.com/wordpress-tutorials/different-post-count-in-wordpress-search-and-archive-page/
-function iott_limit_posts_per_page() {
-    if (is_home()) {
-        return 8;
-    } else {
-        return 12;
-    }
+add_action( 'pre_get_posts', 'iott_per_page_query' );
+/**
+ * Customize category query using pre_get_posts.
+ * 
+ * @author     FAT Media <http://youneedfat.com>
+ * @copyright  Copyright (c) 2013, FAT Media, LLC
+ * @license    GPL-2.0+
+ * @todo       Change prefix to theme or plugin prefix
+ *
+ */
+function iott_per_page_query( $query ) {
+  
+    $taxonomy = is_tax() ? get_queried_object()->taxonomy:""; 
+    
+    $is_taxonomy = in_array( $taxonomy , array( 'product_category' , 'event_cat' , 'chart_cat' , 'video_cat' , 'infographic_cat' ) );
+  
+	if ( $query->is_main_query() && ! $query->is_feed() && ! is_admin() && $is_taxonomy  ) {
+		$query->set( 'posts_per_page', '12' ); //Change this number to anything you like.
+	}
+	
+	$post_type = $query->get('post_type');
+	
+	$is_post_type = in_array( $post_type , array( 'product' , 'sed_events' , 'chart' , 'iott_video' , 'sed_infographic' ) );
+
+	if ( $query->is_main_query() && ! $query->is_feed() && ! is_admin() && $is_post_type && is_post_type_archive() ) {
+		$query->set( 'posts_per_page', '12' ); //Change this number to anything you like.
+	}
+	
 }
-add_filter ('pre_option_posts_per_page', 'iott_limit_posts_per_page');
 
 /*
  * Sort posts in a custom post-type
  */
 function iott_custom_posttype_sort($query) {
 
-    $post_type = $query->get('post_type');
+    $post_type = $query->get('post_type'); //var_dump( $query );
+    
+    $taxonomy = is_tax() ? get_queried_object()->taxonomy:""; 
+    
+    $is_post_type = in_array( $post_type , array( 'product' , 'sed_events' , 'chart' , 'iott_video' , 'sed_infographic' ) );
+    
+    $is_taxonomy = in_array( $taxonomy , array( 'product_category' , 'event_cat' , 'chart_cat' , 'video_cat' , 'infographic_cat' ) );
 
-    if ( in_array( $post_type , array( 'product' , 'sed_events' , 'chart' , 'iott_video' , 'sed_infographic' ) ) ) {
+    if ( ( $is_post_type || $is_taxonomy ) && $query->is_main_query() && !is_admin() ) {
 
         if( isset( $_GET['orderby'] ) && !empty( $_GET['orderby'] ) ) {
 
@@ -313,5 +337,18 @@ function iott_register_widgets() {
 }
 
 add_action( 'widgets_init',  'iott_register_widgets' );
+
+function the_sponsored_image( $attachment_id ){
+
+    $img = get_sed_attachment_image_html( $attachment_id , "full");
+
+    if ( ! $img ) {
+        $img = array();
+        $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+    }
+
+    echo $img['thumbnail'];
+
+}
 
 

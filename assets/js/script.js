@@ -193,7 +193,7 @@
     $(".features .slider-wrap > .carousel").livequery(function(){
 
         $(this).slick({
-            mobileFirst         : true ,
+            //mobileFirst         : true ,
             arrows              : true,
             slidesToShow        : 6,
             slidesToScroll      : 6,

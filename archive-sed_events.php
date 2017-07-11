@@ -60,21 +60,24 @@ get_header(); ?>
         <main id="main" class="site-main" role="main">
             
             <section class="content">
+    
+                <?php
 
-                <div class="timeline-content-area <?php iott_the_field('event_color'); ?>">
-    
-                    <?php
-    
-                    $i = 0;
-    
-                    $current_day = '';
-    
-                    $current_month = '';
-    
-                    if ( have_posts() ) :
-    
-                        while ( have_posts() ) : the_post();
-    
+                $i = 0;
+
+                $current_day = '';
+
+                $current_month = '';
+
+                if ( have_posts() ) :
+
+                    while ( have_posts() ) : the_post();
+
+                        ?>
+                    
+                        <div class="timeline-content-area <?php iott_the_field('event_color'); ?>">
+                            
+                        <?php
                             $event_logo_id = iott_get_field('event_image');
     
                             $img = get_sed_attachment_image_html( $event_logo_id , "medium" );
@@ -128,23 +131,27 @@ get_header(); ?>
                                     <div class="text">
                                         <div><?php the_excerpt(); ?></div>
                                     </div>
+                                    
+                                    <div class="more-info">
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" > اطلاعات بیشتر </a>
+                                    </div>
     
                                 </div>
     
                             </div>
-    
-                        <?php
-    
-                        $i++;
-    
-                        endwhile;
-    
-                        wp_pagenavi();
-    
-                    endif;
-                    ?>
-    
-                </div>
+                        
+                        </div>
+
+                    <?php
+
+                    $i++;
+
+                    endwhile;
+
+                    wp_pagenavi();
+
+                endif;
+                ?>
             
             </section>
 

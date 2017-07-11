@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Kimia dam Project\n"
-"POT-Creation-Date: 2017-06-19 19:53+0430\n"
-"PO-Revision-Date: 2017-06-19 19:58+0430\n"
+"Project-Id-Version: IOTT Project\n"
+"POT-Creation-Date: 2017-07-11 06:20+0430\n"
+"PO-Revision-Date: 2017-07-11 06:21+0430\n"
 "Last-Translator: \n"
 "Language-Team: Site Editor Team <info@siteeditor.org>\n"
 "Language: fa_IR\n"
@@ -19,28 +19,106 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive-kimia_gallery.php:101 archive.php:77 index.php:67
-msgid "Previous page"
-msgstr "صفحه قبلی"
-
-#: archive-kimia_gallery.php:102 archive.php:78 index.php:68
-msgid "Next page"
-msgstr "صفحه بعدی"
-
-#: archive-kimia_gallery.php:103 archive.php:79 index.php:69
-msgid "Page"
-msgstr "برگه"
-
-#: functions.php:140
-msgid "Product Catalog Download"
-msgstr "دانلود کاتالوگ محصولات"
-
-#: functions.php:159
-msgid "Download"
-msgstr "دانلود"
-
-#: index.php:38
+#: index.php:37
 msgid "Blog"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:22
+#: site-editor/modules/iott-header/iott-header.php:153
+msgid "Iott Header"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:23
+#: site-editor/modules/iott-header/iott-header.php:154
+msgid "List of iott-header for built-in and custom post types"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:55
+msgid "Iott Header Settings"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:80
+msgid "No sliders found"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:88
+msgid "Instagram Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:89
+msgid "Your Instagram Profile Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:90
+#: site-editor/modules/iott-header/iott-header.php:98
+#: site-editor/modules/iott-header/iott-header.php:106
+#: site-editor/modules/iott-header/iott-header.php:114
+msgid "E.g www.siteeditor.org"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:96
+msgid "Linkedin Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:97
+msgid "Your Linkedin Profile Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:104
+msgid "Google Plus Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:105
+msgid "Your Google Plus Profile Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:112
+msgid "Facebook Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:113
+msgid "Your Facebook Profile Url"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:120
+msgid "Logo"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:121
+msgid "This option allows you to set a logo"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:128
+msgid "Select Slider"
+msgstr ""
+
+#: site-editor/modules/iott-header/iott-header.php:135
+#: site-editor/modules/posts/posts.php:280
+msgid "Module Wrapper Settings"
+msgstr ""
+
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:29
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:161
+msgid "Instagram"
+msgstr ""
+
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:30
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:162
+msgid "Linkdin"
+msgstr ""
+
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:31
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:163
+msgid "Google Plus"
+msgstr ""
+
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:32
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:164
+msgid "Facebook"
+msgstr ""
+
+#: site-editor/modules/iott-header/skins/default/sed_iott_header.php:66
+msgid "View Product"
 msgstr ""
 
 #: site-editor/modules/posts/posts.php:22
@@ -129,21 +207,96 @@ msgstr ""
 msgid "Animation Settings"
 msgstr ""
 
-#: site-editor/modules/posts/posts.php:280
-msgid "Module Wrapper Settings"
-msgstr ""
-
-#: site-editor/modules/posts/skins/default/sed_posts.php:38
+#: site-editor/modules/posts/skins/default/sed_posts.php:41
+#: site-editor/modules/posts/skins/skin1/sed_posts.php:85
+#: site-editor/modules/posts/skins/skin2/sed_posts.php:42
+#: site-editor/modules/posts/skins/skin3/sed_posts.php:50
 msgid "Not found result"
 msgstr ""
 
-#: template-parts/post/blog-content.php:44
-msgid "Read More"
-msgstr "بیشتر بخوانید"
+#: site-editor/modules/posts/skins/skin1/sed_posts.php:58
+msgid "click here"
+msgstr "اینجا کلیک کنید"
 
-#: template-parts/post/blog-content.php:60
-msgid "Pages:"
+#: site-editor/modules/posts/skins/skin1/sed_posts.php:63
+#, php-format
+msgid "For more information %1$s click here %2$s"
+msgstr "برای کسب اطلاعات بیشتر، %1$s اینجا را کلیک کنید %2$s"
+
+#: widgets/featured-post.php:24
+msgid "NS Featured Posts Widget"
 msgstr ""
+
+#: widgets/featured-post.php:26
+msgid "NS Featured Posts"
+msgstr ""
+
+#: widgets/featured-post.php:116
+msgid "Title:"
+msgstr ""
+
+#: widgets/featured-post.php:120
+msgid "Number of posts to show:"
+msgstr ""
+
+#: widgets/featured-post.php:125
+msgid "Post Type:"
+msgstr ""
+
+#: widgets/featured-post.php:127
+msgid "Post"
+msgstr ""
+
+#: widgets/featured-post.php:128
+msgid "Page"
+msgstr "برگه"
+
+#: widgets/featured-post.php:150
+msgid "Display post date?"
+msgstr ""
+
+#: widgets/featured-post.php:154
+msgid "Select Style:"
+msgstr ""
+
+#: widgets/featured-post.php:156
+msgid "Default"
+msgstr ""
+
+#: widgets/featured-post.php:157
+msgid "Style 1"
+msgstr ""
+
+#: widgets/featured-post.php:158
+msgid "Style 2"
+msgstr ""
+
+#: widgets/featured-post.php:159
+msgid "Style 3"
+msgstr ""
+
+#: widgets/featured-post.php:165
+msgid "Link To Archive? \"for style 2 and style 3\""
+msgstr ""
+
+#: widgets/featured-post.php:169
+msgid "Replace Title:"
+msgstr ""
+
+#~ msgid "Previous page"
+#~ msgstr "صفحه قبلی"
+
+#~ msgid "Next page"
+#~ msgstr "صفحه بعدی"
+
+#~ msgid "Product Catalog Download"
+#~ msgstr "دانلود کاتالوگ محصولات"
+
+#~ msgid "Download"
+#~ msgstr "دانلود"
+
+#~ msgid "Read More"
+#~ msgstr "بیشتر بخوانید"
 
 #~ msgid "Your Last Login %s"
 #~ msgstr "آخرین ورود شما  %s"

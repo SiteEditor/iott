@@ -151,7 +151,9 @@ get_header(); ?>
                 ?>
 
                 <?php
-                $related_products = (array)iott_get_field( 'related_products' );
+                $related_products = (array)iott_get_field( 'related_products' ); 
+                $related_products = array_filter( $related_products );
+               
                 if( !empty( $related_products ) ){
                 ?>
                 <section class="productSections relatedProducts">
@@ -187,6 +189,7 @@ get_header(); ?>
                 <?php } 
 
                 $suggestion_products = (array)iott_get_field( 'suggestion_products' );
+                $suggestion_products = array_filter( $suggestion_products );
 
                 if( !empty( $suggestion_products ) ){
                 ?>
