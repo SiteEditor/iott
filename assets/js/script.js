@@ -29,27 +29,27 @@
             showCursor: !1
         });
         /*var a = $(".owl-carousel");
-        a.owlCarousel({
-            autoWidth: !0,
-            slideBy: "page",
-            nav: !0,
-            navText: ["قبلی", "بعدی"]
-        }), a.on("refresh.owl.carousel", function() {
-            var a = $(".owl-item.active");
-            a.slice(a.length - a.length / 2, a.length).addClass("fromLast"), a.eq(-3).addClass("last")
-        }), a.on("translate.owl.carousel", function(a) {
-            $(".owl-item.fromLast").removeClass("fromLast"), $(".owl-item.last").removeClass("last")
-        }), a.on("translated.owl.carousel", function(a) {
-            var b = $(".owl-item.active");
-            b.slice(b.length - b.length / 2, b.length).addClass("fromLast"), b.eq(-3).addClass("last")
-        }), window.owl = a, $(".fancybox").fancybox({
-            maxWidth: 800,
-            maxHeight: 600,
-            fitToView: !1,
-            width: "70%",
-            height: "70%",
-            autoSize: !1
-        })*/
+         a.owlCarousel({
+         autoWidth: !0,
+         slideBy: "page",
+         nav: !0,
+         navText: ["قبلی", "بعدی"]
+         }), a.on("refresh.owl.carousel", function() {
+         var a = $(".owl-item.active");
+         a.slice(a.length - a.length / 2, a.length).addClass("fromLast"), a.eq(-3).addClass("last")
+         }), a.on("translate.owl.carousel", function(a) {
+         $(".owl-item.fromLast").removeClass("fromLast"), $(".owl-item.last").removeClass("last")
+         }), a.on("translated.owl.carousel", function(a) {
+         var b = $(".owl-item.active");
+         b.slice(b.length - b.length / 2, b.length).addClass("fromLast"), b.eq(-3).addClass("last")
+         }), window.owl = a, $(".fancybox").fancybox({
+         maxWidth: 800,
+         maxHeight: 600,
+         fitToView: !1,
+         width: "70%",
+         height: "70%",
+         autoSize: !1
+         })*/
     }
 
     var _closeVNav = function(){
@@ -149,12 +149,12 @@
     });
 
     var scrollbarContainer =  $(".sed_iott_header_vertical_menu_wrap"),
-        scrollbarHeight =  $( window ).height() - 340;  
+        scrollbarHeight =  $( window ).height() - 340;
 
     scrollbarContainer.css({
-        height : scrollbarHeight + 'px', 
+        height : scrollbarHeight + 'px',
     });
-    
+
 
     scrollbarContainer.mCustomScrollbar({
         autoHideScrollbar:true ,
@@ -168,12 +168,12 @@
     });
 
     var scrollbarContainer_2 =  $(".menu-container .left-panel"),
-        scrollbarHeight_2 =  $( window ).height();  
+        scrollbarHeight_2 =  $( window ).height();
 
     scrollbarContainer_2.css({
-        height : scrollbarHeight_2 + 'px', 
+        height : scrollbarHeight_2 + 'px',
     });
-    
+
 
     scrollbarContainer_2.mCustomScrollbar({
         autoHideScrollbar:true ,
@@ -202,21 +202,21 @@
             rtl                 : $rtl,
             //swipe               : true ,
             touchMove           : true ,
-            infinite            : false, 
+            infinite            : false,
             prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
             nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
             responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 6,
-                        slidesToScroll: 6,  
-                    }
-                },
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
                 {
                     breakpoint: 600,
                     settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
+                        slidesToShow: 3,
+                        slidesToScroll: 3
                     }
                 },
                 {
@@ -238,7 +238,7 @@
     $(".customers .slider-wrap > .carousel").livequery(function(){
 
         $(this).slick({
-            mobileFirst         : true ,
+            //mobileFirst         : true ,
             arrows              : true,
             slidesToShow        : 6,
             slidesToScroll      : 6,
@@ -247,104 +247,16 @@
             rtl                 : $rtl,
             //swipe               : true ,
             touchMove           : true ,
-            infinite            : false, 
+            infinite            : false,
             prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
             nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
             responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 6,
-                        slidesToScroll: 6,  
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 6,
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-            ]
-        });
-
-    });    
-
-    $(".timeline .slider-wrap > .carousel").livequery(function(){
-
-        $(this).slick({
-            mobileFirst         : true ,
-            arrows              : true,
-            slidesToShow        : 16,
-            slidesToScroll      : 16,
-            dots                : false,
-            //centerMode          : false,
-            rtl                 : $rtl,
-            //swipe               : true ,
-            touchMove           : true ,
-            infinite            : false, 
-            prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
-            nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 16,
-                        slidesToScroll: 16,  
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-            ]
-        });
-
-    });    
-
-    $(".productSections .slider-wrap > .carousel").livequery(function(){
-
-        $(this).slick({
-            mobileFirst         : true ,
-            arrows              : false,
-            slidesToShow        : 4,
-            slidesToScroll      : 4,
-            dots                : true,
-            //centerMode          : false,
-            rtl                 : $rtl,
-            //swipe               : true ,
-            touchMove           : true ,
-            infinite            : false, 
-            prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
-            nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4,  
-                    }
-                },
+            },
                 {
                     breakpoint: 600,
                     settings: {
@@ -365,7 +277,155 @@
             ]
         });
 
-    });     
+    });
+
+
+    var _timelineRepositions = function ( $this ) {
+
+        $this.find('.slick-slide.fromLast').removeClass("fromLast");
+
+        $this.find('.slick-slide.full-ev').removeClass("full-ev");
+
+        var a = $this.find('.slick-slide[aria-hidden="false"]');
+
+        a.slice(a.length - 5, a.length).addClass("fromLast");
+
+        if( $(window).width() <= 600 ) {
+
+            a.slice(a.length - 5, a.length).addClass("full-ev");
+
+        }
+
+    };
+
+
+    $(".timeline .slider-wrap > .carousel").livequery(function(){
+
+        $(this).slick({
+            //mobileFirst         : true ,
+            arrows              : true,
+            slidesToShow        : 16,
+            slidesToScroll      : 1,
+            dots                : false,
+            //centerMode          : true,
+            //rtl                 : true,
+            //swipe               : true ,
+            touchMove           : true ,
+            infinite            : false,
+            prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
+            nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 12,
+                    slidesToScroll: 1
+                }
+            },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 7,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+        var $this = $(this);
+
+        $this.on('beforeChange', function( event, slick, currentSlide ){
+
+            _timelineRepositions( $this );
+
+        });
+
+        $this.on('init', function( event, slick, currentSlide ){
+
+            _timelineRepositions( $this );
+
+        });
+
+        $this.on('reInit', function( event, slick, currentSlide ){
+
+            _timelineRepositions( $this );
+
+        });
+
+
+        $this.on('swipe', function( event, slick, currentSlide ){
+
+            _timelineRepositions( $this );
+
+        });
+
+
+        $this.on('setPosition', function( event, slick, currentSlide ){
+
+            _timelineRepositions( $this );
+
+        });
+
+        $this.on('breakpoint', function( event, slick, currentSlide ){
+
+            _timelineRepositions( $this );
+
+        });
+
+    });
+
+    $(".productSections .slider-wrap > .carousel").livequery(function(){
+
+        $(this).slick({
+            //mobileFirst         : true ,
+            arrows              : false,
+            slidesToShow        : 4,
+            slidesToScroll      : 4,
+            dots                : true,
+            //centerMode          : false,
+            rtl                 : $rtl,
+            //swipe               : true ,
+            touchMove           : true ,
+            infinite            : false,
+            prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
+            nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+    });
 
 
     $('.single-product-thumbnails-slider .slider-wrap > .carousel').slick({
@@ -376,7 +436,7 @@
         fade                : true,
         asNavFor            : '.single-product-nav-slider .slider-wrap > .carousel'
     });
- 
+
 
     $('.single-product-nav-slider .slider-wrap > .carousel').slick({
         rtl                 : $rtl,
@@ -385,13 +445,27 @@
         asNavFor            : '.single-product-thumbnails-slider .slider-wrap > .carousel',
         arrows              : true,
         touchMove           : true ,
-        infinite            : true, 
+        infinite            : true,
         prevArrow : '<span class="slide-nav-bt slide-prev custom-btn custom-btn-secondary"><i class="fa fa-angle-left"></i></span>',
         nextArrow : '<span class="slide-nav-bt slide-next custom-btn custom-btn-secondary"><i class="fa fa-angle-right"></i></span>',
         //centerMode          : true,
         focusOnSelect       : true
     });
-    
+
+
+
+    /**
+     *
+     * Loading
+     */
+
+
+    var removePreloader = function() {
+        setTimeout(function(){$('.preloader').hide();}, 800);
+    };
+
+    removePreloader();
+
 
 
 })(jQuery);

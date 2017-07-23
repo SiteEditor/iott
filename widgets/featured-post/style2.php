@@ -19,18 +19,30 @@ if ( $nsfp_query->have_posts() ) : ?>
                 $title = $link_to_archive && !empty( $replace_title ) ? $replace_title : get_the_title();
                 ?>
 
-                <a href="<?php echo $link; ?>" class="image">
+                <a href="<?php the_permalink(); ?>" class="image">
                     <?php
-                    $attachment_id = get_post_thumbnail_id( get_the_ID() );
 
-                    $img = get_sed_attachment_image_html( $attachment_id , "medium");
+                    $video_id = get_theme_mod( 'iott_featured_video_src' , '' );
 
-                    if ( ! $img ) {
-                        $img = array();
-                        $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+                    if( $post_type == "iott_video" && !empty( $video_id ) ) {
+
+                        $video_src = wp_get_attachment_url( $video_id );
+                    ?>
+                        <video src="<?php echo $video_src; ?>" autobuffer autoplay loop muted></video>
+                    <?php
+                    }else{    
+
+                        $attachment_id = get_post_thumbnail_id(get_the_ID());
+
+                        $img = get_sed_attachment_image_html($attachment_id, "medium");
+
+                        if (!$img) {
+                            $img = array();
+                            $img['thumbnail'] = '<img class="sed-image-placeholder sed-image" src="' . sed_placeholder_img_src() . '" />';
+                        }
+
+                        echo $img['thumbnail'];
                     }
-
-                    echo $img['thumbnail'];
 
                     ?>
                     <span class="play-icon"></span>

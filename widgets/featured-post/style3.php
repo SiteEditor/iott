@@ -19,7 +19,7 @@
                     $title = $link_to_archive && !empty( $replace_title ) ? $replace_title : get_the_title();
                     ?>
 
-                    <a href="<?php echo $link; ?>" class="image">
+                    <a href="<?php the_permalink(); ?>" class="image">
                         <?php
                         $attachment_id = get_post_thumbnail_id( get_the_ID() );
 

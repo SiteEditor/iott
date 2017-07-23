@@ -351,4 +351,36 @@ function the_sponsored_image( $attachment_id ){
 
 }
 
+function iott_register_theme_fields( $fields ){
 
+    $fields['video_field_attr'] = array(
+        'type'              => 'video',
+        'label'             => __('Featured Video Field (MP4)', 'site-editor'),
+        'description'       => __('the Video OGV Upload option allows you to upload a .OGV format of your video file. .OGV files are optional. You can choose a video with this format from the library by clicking on the button in this section.','site-editor'),
+        "js_params"     => array(
+            "subtypes"          => array( "mp4" )
+        ),
+        'transport'     => 'postMessage' ,
+        'setting_id'    => 'iott_featured_video_src',
+        'default'       => '',
+        "panel"         => "general_settings" ,
+    );
+
+    return $fields;
+
+}
+
+add_filter( "sed_theme_options_fields_filter" , 'iott_register_theme_fields' , 10000 );
+
+function iott_admin_enqueue_style_fix( $hook ) {
+
+    if ( !is_site_editor() ) {
+        return;
+    }
+
+    wp_dequeue_style('wp-jquery-ui-dialog');
+
+}
+add_action( 'admin_enqueue_scripts', 'iott_admin_enqueue_style_fix' , 10000000 );
+add_action( 'in_admin_header', 'iott_admin_enqueue_style_fix' , 10000000 );
+add_action( 'media_buttons', 'iott_admin_enqueue_style_fix' , 10000000 );
